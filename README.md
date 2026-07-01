@@ -4,6 +4,10 @@
 
 심플하고 따뜻한 인터페이스에서 조건을 바꿔가며 이름을 추천받고, 한자 풀이·오행·수리·사주·흔함 지수까지 풍부한 정보를 즉시 확인합니다.
 
+**🔗 라이브 데모 — https://ireum-beryl.vercel.app** &nbsp;·&nbsp; **소스 — https://github.com/iamcan13/ireum**
+
+> GitHub 저장소가 Vercel에 연결되어 있어, `main`에 푸시하면 자동으로 배포됩니다. 데이터베이스 없이 완전 정적(Static)으로 동작합니다.
+
 ## ✨ 기능
 
 - **라이브 추천** — 성·성별·글자 수·흔함 강도·소리 취향·한자 취향을 바꾸는 즉시 순위가 갱신됩니다. (적용 버튼 없음)
@@ -29,20 +33,26 @@ npm run dev        # http://localhost:3000
 ## ✅ 검증
 
 ```bash
-npm test           # vitest — 사주 12개 만세력 케이스 + 성명학/추천 엔진 (25 tests)
-npm run build      # 프로덕션 빌드
+npm test           # vitest — 사주 12개 만세력 케이스 + 성명학/추천 엔진 (30 tests)
+npm run build      # 프로덕션 빌드 (정적 페이지 생성)
 ```
 
 브라우저 E2E(Playwright)로 모든 인터랙션(라이브 재정렬·드로어·사주 연동·즐겨찾기·비교)을 검증했습니다.
 
 ## ☁️ 배포 (Vercel)
 
-데이터베이스 없이도 완전히 동작합니다(즐겨찾기는 localStorage).
+이 저장소는 이미 Vercel에 배포되어 있습니다 → **https://ireum-beryl.vercel.app**
+
+데이터베이스 없이도 완전히 동작합니다(즐겨찾기는 localStorage). GitHub 저장소가 Vercel 프로젝트에 연결되어 있어, `main` 브랜치에 푸시하면 자동으로 프로덕션 배포가 트리거됩니다.
+
+직접 배포하려면:
 
 ```bash
-npm i -g vercel    # 또는 brew install vercel-cli
-vercel login       # 최초 1회 (브라우저 인증)
-vercel --prod
+npm i -g vercel        # 또는 brew install vercel-cli
+vercel login           # 최초 1회 (브라우저 인증)
+vercel link            # 프로젝트 연결
+vercel git connect     # (선택) GitHub 저장소 연결 → push 시 자동 배포
+vercel --prod          # 프로덕션 배포
 ```
 
 ### (선택) Supabase로 동기화
