@@ -33,12 +33,13 @@ export interface NameParams {
   syllableCount: 1 | 2;
   rarity: number; // 0(흔해도 OK)–100(희귀하게)
   preferredInitials?: string[]; // 선호 초성 자모 (예: ["ㅅ","ㅈ"])
+  initialsMode?: "and" | "or"; // 자음 조합: 모두 포함(and, 기본) / 하나라도(or)
   preferredElements?: Element[]; // 선호 소리 오행
   avoidBatchim?: boolean; // 받침 없는 이름 선호
   preferredHanja?: string[]; // 선호 한자 (현재 UI 미사용)
   fixed?: { pos: number; c: string } | null; // (구) 고정 한자 — 현재 미사용
-  // 돌림자(항렬): 특정 음절을 위치 고정. c 지정 시 그 한자로 고정, 미지정 시 한자 변형 허용
-  dollimja?: { syllable: string; pos: 0 | 1; c?: string } | null;
+  // 돌림자(항렬): 특정 음절을 위치 고정. hanja 지정 시 그 한자로 고정, 미지정(자동) 시 변형 허용
+  dollimja?: { syllable: string; pos: 0 | 1; hanja?: NamingHanjaEntry } | null;
   useSaju: boolean;
 }
 

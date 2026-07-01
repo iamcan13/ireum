@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
-import type { NameParams, Gender } from "@/lib/naming/types";
-import { surnameOptions, hanjaForSyllable } from "@/lib/hanja/pool";
+import { useEffect, useState } from "react";
+import type { NameParams, Gender, NamingHanjaEntry } from "@/lib/naming/types";
+import { surnameOptions } from "@/lib/hanja/pool";
+import { topHanjaForReading } from "@/lib/hanja/inmyeong";
 import {
   Segmented,
   Chip,
@@ -28,36 +29,58 @@ function GroupLabel({ children, hint }: { children: React.ReactNode; hint?: stri
 export function ControlPanel({
   params,
   onChange,
+  onOpenHanjaSearch,
 }: {
   params: NameParams;
   onChange: (patch: Partial<NameParams>) => void;
+  onOpenHanjaSearch: (syllable: string) => void;
 }) {
   const [advanced, setAdvanced] = useState(false);
-  const [dollimSyl, setDollimSyl] = useState(params.dollimja?.syllable ?? "");
-  const [dollimC, setDollimC] = useState(params.dollimja?.c ?? "");
+  const dollimSyl = params.dollimja?.syllable ?? ""; // params에서 파생(새로고침 복원과 동기화)
+  const [topHanja, setTopHanja] = useState<NamingHanjaEntry[]>([]);
   const sOpts = surnameOptions(params.surname.trim());
 
-  const dollimHanja = dollimSyl.trim() ? hanjaForSyllable(dollimSyl.trim()) : [];
-  const curDollimPos = () => (params.dollimja ? String(params.dollimja.pos) : "none");
-  const commitDollim = (syl: string, posStr: string, c: string) => {
-    const s = syl.trim().slice(0, 1);
-    if (posStr === "none" || !s) onChange({ dollimja: null });
-    else
-      onChange({
-        dollimja: { syllable: s, pos: Number(posStr) as 0 | 1, c: c || undefined },
-      });
-  };
+  useEffect(() => {
+    const syl = dollimSyl.trim();
+    if (!syl) {
+      setTopHanja([]);
+      return;
+    }
+    let cancelled = false;
+    topHanjaForReading(syl, 10)
+      .then((list) => {
+        if (!cancelled) setTopHanja(list);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [dollimSyl]);
+
+  const defaultPos = (): 0 | 1 =>
+    params.syllableCount === 1 ? 0 : ((params.dollimja?.pos ?? 1) as 0 | 1);
   const onDollimSyl = (raw: string) => {
     const v = raw.trim().slice(0, 1);
-    setDollimSyl(v);
-    setDollimC(""); // 음절이 바뀌면 한자 선택 초기화
-    commitDollim(v, curDollimPos(), "");
+    if (!v) onChange({ dollimja: null });
+    else onChange({ dollimja: { syllable: v, pos: defaultPos(), hanja: undefined } });
   };
-  const setDollimPos = (v: string) => commitDollim(dollimSyl, v, dollimC);
-  const selectDollimC = (c: string) => {
-    setDollimC(c);
-    commitDollim(dollimSyl, curDollimPos(), c);
+  const setDollimPos = (posStr: string) => {
+    const syl = dollimSyl.trim().slice(0, 1);
+    if (!syl) return;
+    onChange({
+      dollimja: {
+        syllable: syl,
+        pos: Number(posStr) as 0 | 1,
+        hanja: params.dollimja?.hanja,
+      },
+    });
   };
+  const selectDollimHanja = (entry?: NamingHanjaEntry) => {
+    const syl = dollimSyl.trim().slice(0, 1);
+    if (!syl) return;
+    onChange({ dollimja: { syllable: syl, pos: defaultPos(), hanja: entry } });
+  };
+  const selHanja = params.dollimja?.hanja;
 
   const toggleInitial = (c: string) => {
     const cur = params.preferredInitials ?? [];
@@ -146,6 +169,19 @@ export function ControlPanel({
               </Chip>
             ))}
           </div>
+          {(params.preferredInitials ?? []).length >= 2 && (
+            <div className="mt-2.5">
+              <Segmented<string>
+                ariaLabel="자음 조합 방식"
+                value={params.initialsMode ?? "and"}
+                onChange={(v) => onChange({ initialsMode: v as "and" | "or" })}
+                options={[
+                  { value: "and", label: "모두 포함" },
+                  { value: "or", label: "하나라도" },
+                ]}
+              />
+            </div>
+          )}
           {(params.preferredInitials ?? []).length > 0 && (
             <button
               type="button"
@@ -175,58 +211,69 @@ export function ControlPanel({
             onChange={(e) => onDollimSyl(e.target.value)}
             className="h-11 text-center"
           />
-          {dollimHanja.length > 0 && (
-            <div className="mt-2">
-              <p className="mb-1.5 text-xs text-ink-subtle">
-                한자 선택 (안 고르면 자동)
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                <Chip active={!dollimC} onClick={() => selectDollimC("")}>
-                  자동
-                </Chip>
-                {dollimHanja.map((h) => (
-                  <Chip
-                    key={h.c}
-                    active={dollimC === h.c}
-                    onClick={() => selectDollimC(h.c)}
-                  >
-                    <span className="font-display text-base">{h.c}</span>
-                    <span className="text-xs text-ink-subtle">{h.hun}</span>
-                  </Chip>
-                ))}
-              </div>
-            </div>
-          )}
-          <div className="mt-2">
-            <Segmented<string>
-              ariaLabel="돌림자 위치"
-              value={params.dollimja ? String(params.dollimja.pos) : "none"}
-              onChange={setDollimPos}
-              options={
-                params.syllableCount === 1
-                  ? [
-                      { value: "none", label: "안 함" },
-                      { value: "0", label: "적용" },
-                    ]
-                  : [
-                      { value: "none", label: "안 함" },
+          {dollimSyl.trim() && (
+            <>
+              {params.syllableCount === 2 && (
+                <div className="mt-2">
+                  <Segmented<string>
+                    ariaLabel="돌림자 위치"
+                    value={String(params.dollimja?.pos ?? 1)}
+                    onChange={setDollimPos}
+                    options={[
                       { value: "0", label: "첫 글자" },
                       { value: "1", label: "끝 글자" },
-                    ]
-              }
-            />
-          </div>
-          {params.dollimja && (
-            <p className="mt-1.5 text-xs text-ink-subtle">
-              모든 추천이 &lsquo;{params.dollimja.syllable}
-              {params.dollimja.c ? ` ${params.dollimja.c}` : ""}&rsquo; 자를{" "}
-              {params.syllableCount === 1
-                ? ""
-                : params.dollimja.pos === 0
-                  ? "첫 글자로 "
-                  : "끝 글자로 "}
-              포함해요.
-            </p>
+                    ]}
+                  />
+                </div>
+              )}
+              <div className="mt-3">
+                <p className="mb-1.5 text-xs text-ink-subtle">
+                  한자 선택 · 인명용 통계 상위 (안 고르면 자동)
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Chip active={!selHanja} onClick={() => selectDollimHanja(undefined)}>
+                    자동
+                  </Chip>
+                  {selHanja && !topHanja.some((h) => h.c === selHanja.c) && (
+                    <Chip active onClick={() => selectDollimHanja(selHanja)}>
+                      <span className="font-display text-base">{selHanja.c}</span>
+                      {selHanja.hun && (
+                        <span className="text-xs text-ink-subtle">{selHanja.hun}</span>
+                      )}
+                    </Chip>
+                  )}
+                  {topHanja.map((h) => (
+                    <Chip
+                      key={h.c}
+                      active={selHanja?.c === h.c}
+                      onClick={() => selectDollimHanja(h)}
+                    >
+                      <span className="font-display text-base">{h.c}</span>
+                      {h.hun && (
+                        <span className="text-xs text-ink-subtle">{h.hun}</span>
+                      )}
+                    </Chip>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={() => onOpenHanjaSearch(dollimSyl.trim())}
+                    className="inline-flex items-center gap-1 rounded-full border border-line px-3.5 py-2 text-sm text-ink-muted transition-colors hover:border-ink-subtle hover:text-ink"
+                  >
+                    인명용 한자 더 찾기
+                  </button>
+                </div>
+              </div>
+              <p className="mt-2 text-xs text-ink-subtle">
+                모든 추천이 &lsquo;{dollimSyl.trim()}
+                {selHanja ? ` ${selHanja.c}` : ""}&rsquo; 자를{" "}
+                {params.syllableCount === 1
+                  ? ""
+                  : (params.dollimja?.pos ?? 1) === 0
+                    ? "첫 글자로 "
+                    : "끝 글자로 "}
+                포함해요.
+              </p>
+            </>
           )}
         </div>
 

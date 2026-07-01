@@ -137,15 +137,36 @@ describe("자음 커버리지 & 돌림자", () => {
     for (const x of s) expect(x.picks[0].syllable).toBe("서");
   });
 
-  it("돌림자 한자 고정: 특정 한자(俊)로 끝 글자 고정", () => {
+  it("돌림자 한자 고정: 특정 한자(俊) 엔트리로 끝 글자 고정", () => {
+    const hanja = {
+      c: "俊",
+      eum: "준",
+      hun: "빼어날",
+      meaning: "재주가 빼어남",
+      s: 9,
+      oh: "火" as const,
+      gender: "male" as const,
+    };
     const s = suggestNames(
-      { ...base, dollimja: { syllable: "준", pos: 1, c: "俊" } },
+      { ...base, dollimja: { syllable: "준", pos: 1, hanja } },
       20
     );
     expect(s.length).toBeGreaterThan(0);
     for (const x of s) {
       expect(x.picks[1].syllable).toBe("준");
       expect(x.picks[1].hanja.c).toBe("俊");
+    }
+  });
+
+  it("자음 OR 모드: 선택 자음 중 하나라도 포함", () => {
+    const s = suggestNames(
+      { ...base, preferredInitials: ["ㅅ", "ㅈ"], initialsMode: "or" },
+      30
+    );
+    expect(s.length).toBeGreaterThan(0);
+    for (const x of s) {
+      const inits = x.picks.map((p) => initialConsonant(p.syllable));
+      expect(inits.some((i) => i === "ㅅ" || i === "ㅈ")).toBe(true);
     }
   });
 

@@ -1,7 +1,8 @@
 "use client";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { NameParams, Suggestion } from "@/lib/naming/types";
+import type { SajuResult } from "@/lib/saju";
 import { suggestNames, buildSaju } from "@/lib/naming/suggest";
 import {
   getStorage,
@@ -14,6 +15,7 @@ import { ResultList, type SortKey } from "@/components/ResultList";
 import { DetailDrawer } from "@/components/DetailDrawer";
 import { CompareTray } from "@/components/CompareTray";
 import { StatsExplorer } from "@/components/StatsExplorer";
+import { HanjaSearchModal } from "@/components/HanjaSearchModal";
 import { XIcon, HeartIcon } from "@/components/ui/icons";
 
 const DEFAULT_PARAMS: NameParams = {
@@ -32,21 +34,56 @@ export function Studio() {
   const [params, setParams] = useState<NameParams>(DEFAULT_PARAMS);
   const [sort, setSort] = useState<SortKey>("recommend");
   const [selected, setSelected] = useState<Suggestion | null>(null);
+  const [selectedSaju, setSelectedSaju] = useState<SajuResult | null>(null);
   const [favorites, setFavorites] = useState<SavedName[]>([]);
   const [compare, setCompare] = useState<Suggestion[]>([]);
   const [showFav, setShowFav] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const [hanjaSearch, setHanjaSearch] = useState<{ open: boolean; syllable: string }>(
+    { open: false, syllable: "" }
+  );
 
+  // 즐겨찾기 로드
   useEffect(() => {
-    getStorage()
-      .list()
-      .then(setFavorites)
-      .catch(() => {});
+    getStorage().list().then(setFavorites).catch(() => {});
   }, []);
+
+  // 필터(params) 새로고침 유지 — 마운트 시 복원, 변경 시 저장
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("ieum.params.v1");
+      if (raw) setParams((p) => ({ ...p, ...(JSON.parse(raw) as Partial<NameParams>) }));
+      const rawSort = localStorage.getItem("ieum.sort.v1");
+      if (rawSort) setSort(rawSort as SortKey);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+  const firstSave = useRef(true);
+  useEffect(() => {
+    if (firstSave.current) {
+      firstSave.current = false;
+      return;
+    }
+    try {
+      localStorage.setItem("ieum.params.v1", JSON.stringify(params));
+      localStorage.setItem("ieum.sort.v1", sort);
+    } catch {
+      /* ignore */
+    }
+  }, [params, sort]);
 
   const onChange = useCallback((patch: Partial<NameParams>) => {
     setParams((p) => ({ ...p, ...patch }));
   }, []);
+
+  const openDrawer = useCallback(
+    (sug: Suggestion, sajuSnap: SajuResult | null) => {
+      setSelected(sug);
+      setSelectedSaju(sajuSnap);
+    },
+    []
+  );
 
   const saju = useMemo(() => buildSaju(params), [params]);
 
@@ -79,12 +116,14 @@ export function Studio() {
           hanjaString: s.hanjaString,
           meaning: s.meaning,
           savedAt: Date.now(),
+          suggestion: s,
+          saju,
         };
         storage.add(sn);
         return [sn, ...prev];
       });
     },
-    []
+    [saju]
   );
 
   const toggleCompare = useCallback((s: Suggestion) => {
@@ -131,7 +170,13 @@ export function Studio() {
               아이에게 <span className="text-accent">어울리는</span> 이름을 찾아요
             </h1>
           </div>
-          <ControlPanel params={params} onChange={onChange} />
+          <ControlPanel
+            params={params}
+            onChange={onChange}
+            onOpenHanjaSearch={(syllable) =>
+              setHanjaSearch({ open: true, syllable })
+            }
+          />
           <button
             type="button"
             onClick={() => setShowStats(true)}
@@ -154,7 +199,7 @@ export function Studio() {
             onSort={setSort}
             favorites={favSet}
             compare={compareSet}
-            onOpen={setSelected}
+            onOpen={(s) => openDrawer(s, saju)}
             onToggleFav={toggleFav}
             onToggleCompare={toggleCompare}
           />
@@ -163,7 +208,7 @@ export function Studio() {
 
       <DetailDrawer
         suggestion={selected}
-        saju={selected ? saju : null}
+        saju={selectedSaju}
         isFav={selected ? favSet.has(selected.id) : false}
         inCompare={selected ? compareSet.has(selected.id) : false}
         onClose={() => setSelected(null)}
@@ -188,12 +233,34 @@ export function Studio() {
           getStorage().remove(id);
           setFavorites((p) => p.filter((f) => f.id !== id));
         }}
+        onOpen={(f) => {
+          setShowFav(false);
+          openDrawer(f.suggestion, f.saju);
+        }}
       />
 
       <StatsExplorer
         open={showStats}
         onClose={() => setShowStats(false)}
         highlight={selected?.given}
+      />
+
+      <HanjaSearchModal
+        open={hanjaSearch.open}
+        syllable={hanjaSearch.syllable}
+        selectedC={params.dollimja?.hanja?.c}
+        onClose={() => setHanjaSearch({ open: false, syllable: "" })}
+        onSelect={(entry) => {
+          setParams((p) => ({
+            ...p,
+            dollimja: {
+              syllable: hanjaSearch.syllable,
+              pos: p.dollimja?.pos ?? 1,
+              hanja: entry,
+            },
+          }));
+          setHanjaSearch({ open: false, syllable: "" });
+        }}
       />
     </div>
   );
@@ -204,11 +271,13 @@ function FavoritesModal({
   favorites,
   onClose,
   onRemove,
+  onOpen,
 }: {
   open: boolean;
   favorites: SavedName[];
   onClose: () => void;
   onRemove: (id: string) => void;
+  onOpen: (f: SavedName) => void;
 }) {
   return (
     <AnimatePresence>
@@ -260,7 +329,11 @@ function FavoritesModal({
                     key={f.id}
                     className="flex items-center gap-3 rounded-2xl border border-line p-3"
                   >
-                    <div className="min-w-0">
+                    <button
+                      type="button"
+                      onClick={() => onOpen(f)}
+                      className="min-w-0 flex-1 rounded-xl text-left transition-colors hover:opacity-80"
+                    >
                       <div className="font-display text-lg font-bold text-ink">
                         {f.fullName}{" "}
                         <span className="text-sm font-normal text-ink-muted">
@@ -268,14 +341,14 @@ function FavoritesModal({
                         </span>
                       </div>
                       <div className="truncate text-xs text-ink-subtle">
-                        {f.meaning}
+                        {f.meaning} · 눌러서 자세히 보기
                       </div>
-                    </div>
+                    </button>
                     <button
                       type="button"
                       onClick={() => onRemove(f.id)}
                       aria-label="삭제"
-                      className="ml-auto inline-flex size-8 items-center justify-center rounded-full text-ink-subtle hover:bg-surface-muted hover:text-danger"
+                      className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-ink-subtle hover:bg-surface-muted hover:text-danger"
                     >
                       <XIcon width={16} height={16} />
                     </button>

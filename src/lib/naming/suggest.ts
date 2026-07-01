@@ -227,7 +227,9 @@ export function suggestNames(params: NameParams, limit = 48): Suggestion[] {
   const covers = (sylList: string[]): boolean => {
     if (!selected.length) return true;
     const inits = sylList.map((s) => initialConsonant(s));
-    return selected.every((c) => inits.includes(c));
+    return params.initialsMode === "or"
+      ? selected.some((c) => inits.includes(c)) // 하나라도
+      : selected.every((c) => inits.includes(c)); // 모두 포함(기본)
   };
 
   const base = candidateSyllables(params);
@@ -244,11 +246,8 @@ export function suggestNames(params: NameParams, limit = 48): Suggestion[] {
 
   const optionsFor = (syl: string) => {
     if (syl === dollimja?.syllable) {
-      if (dollimja.c) {
-        const hit = hanjaForSyllable(syl).find((h) => h.c === dollimja.c);
-        if (hit) return [hit]; // 특정 한자로 고정
-      }
-      return rankedHanjaAny(syl, params, r.recommend); // 한자 자동(변형 허용)
+      if (dollimja.hanja) return [dollimja.hanja]; // 특정 한자로 고정
+      return rankedHanjaAny(syl, params, r.recommend); // 자동(변형 허용)
     }
     return rankedHanja(syl, params, r.recommend);
   };

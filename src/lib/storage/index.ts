@@ -2,6 +2,9 @@
 // (Supabase로 켜려면: @supabase/supabase-js 설치 + NEXT_PUBLIC_SUPABASE_URL/ANON_KEY 설정 후
 //  createSupabaseStorage()를 getStorage()에서 반환하도록 바꾸면 됨 — UI 코드는 그대로.)
 
+import type { Suggestion } from "../naming/types";
+import type { SajuResult } from "../saju";
+
 export interface SavedName {
   id: string;
   given: string;
@@ -9,6 +12,8 @@ export interface SavedName {
   hanjaString: string;
   meaning: string;
   savedAt: number;
+  suggestion: Suggestion; // 상세보기 복원용
+  saju: SajuResult | null; // 저장 시점 사주 스냅샷
 }
 
 export interface IeumStorage {
