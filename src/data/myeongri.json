@@ -1,0 +1,2070 @@
+{
+  "_meta": {
+    "title": "성명학(姓名學) 평가 기준 레퍼런스 — 수리·자원오행·발음오행",
+    "scope": "한자(漢字)로 표기된 한국 이름의 길흉 평가",
+    "su81_fortune_counts": {
+      "吉": 34,
+      "凶": 32,
+      "半吉半凶": 15
+    },
+    "su81_bangil_set": [
+      27,
+      30,
+      38,
+      40,
+      49,
+      51,
+      53,
+      55,
+      58,
+      61,
+      71,
+      73,
+      75,
+      77,
+      78
+    ]
+  },
+  "su81": [
+    {
+      "num": 1,
+      "fortune": "吉",
+      "meaning_ko": "기본격(基本格): 만물의 시초, 부귀·건강·명예의 기초운"
+    },
+    {
+      "num": 2,
+      "fortune": "凶",
+      "meaning_ko": "분리격(分離格): 분리·동요·좌절, 박약하여 일이 흩어짐"
+    },
+    {
+      "num": 3,
+      "fortune": "吉",
+      "meaning_ko": "성형격(成形格): 지혜·명예, 입신출세하는 길운"
+    },
+    {
+      "num": 4,
+      "fortune": "凶",
+      "meaning_ko": "부정격(否定格): 파괴·사고·박약, 만사 불성의 흉운"
+    },
+    {
+      "num": 5,
+      "fortune": "吉",
+      "meaning_ko": "정성격(定成格): 음양화합, 부귀·성공·복록을 누림"
+    },
+    {
+      "num": 6,
+      "fortune": "吉",
+      "meaning_ko": "계성격(繼成格): 덕망·풍부, 가문이 번창하는 길운"
+    },
+    {
+      "num": 7,
+      "fortune": "吉",
+      "meaning_ko": "독립격(獨立格): 강건·독립, 굳은 의지로 성공"
+    },
+    {
+      "num": 8,
+      "fortune": "吉",
+      "meaning_ko": "개물격(開物格): 인내·발전, 의지를 관철하는 길운"
+    },
+    {
+      "num": 9,
+      "fortune": "凶",
+      "meaning_ko": "궁박격(窮迫格): 재주는 있으나 궁박·불행·종말의 흉운"
+    },
+    {
+      "num": 10,
+      "fortune": "凶",
+      "meaning_ko": "공허격(空虛格): 만사 공허·단명·패가의 흉운"
+    },
+    {
+      "num": 11,
+      "fortune": "吉",
+      "meaning_ko": "흥가격(興家格): 신생·부흥, 가문을 다시 일으키는 길운"
+    },
+    {
+      "num": 12,
+      "fortune": "凶",
+      "meaning_ko": "박약격(薄弱格): 박약·고독·실의, 무력한 흉운"
+    },
+    {
+      "num": 13,
+      "fortune": "吉",
+      "meaning_ko": "지모격(智謀格): 총명·지략, 학예로 성공하는 길운"
+    },
+    {
+      "num": 14,
+      "fortune": "凶",
+      "meaning_ko": "이산격(離散格): 가족 이산·파괴·실패의 흉운"
+    },
+    {
+      "num": 15,
+      "fortune": "吉",
+      "meaning_ko": "통솔격(統率格): 덕망·자비, 만인의 신망을 얻음"
+    },
+    {
+      "num": 16,
+      "fortune": "吉",
+      "meaning_ko": "덕망격(德望格): 인망·두령운, 대업을 성취하는 길운"
+    },
+    {
+      "num": 17,
+      "fortune": "吉",
+      "meaning_ko": "건창격(健暢格): 강건·돌파, 권위로 성공하는 길운"
+    },
+    {
+      "num": 18,
+      "fortune": "吉",
+      "meaning_ko": "발전격(發展格): 진취·융창, 명예가 발전하는 길운"
+    },
+    {
+      "num": 19,
+      "fortune": "凶",
+      "meaning_ko": "고난격(苦難格): 재능 있으나 중도좌절·병약의 흉운"
+    },
+    {
+      "num": 20,
+      "fortune": "凶",
+      "meaning_ko": "허망격(虛望格): 허망·비운·단명의 흉운"
+    },
+    {
+      "num": 21,
+      "fortune": "吉",
+      "meaning_ko": "두령격(頭領格): 자립·명예, 만인의 우두머리가 되는 길운"
+    },
+    {
+      "num": 22,
+      "fortune": "凶",
+      "meaning_ko": "중절격(中折格): 중도좌절·박약, 가을풀 같이 시드는 흉운"
+    },
+    {
+      "num": 23,
+      "fortune": "吉",
+      "meaning_ko": "융창격(隆昌格): 공명·권위, 융성하게 발전하는 길운"
+    },
+    {
+      "num": 24,
+      "fortune": "吉",
+      "meaning_ko": "입신격(立身格): 자수성가·축재, 재복이 따르는 길운"
+    },
+    {
+      "num": 25,
+      "fortune": "吉",
+      "meaning_ko": "안전격(安全格): 건창·영달, 안정되게 성공하는 길운"
+    },
+    {
+      "num": 26,
+      "fortune": "凶",
+      "meaning_ko": "변괴격(變怪格): 영웅운이나 파란·풍파가 많은 흉운"
+    },
+    {
+      "num": 27,
+      "fortune": "半吉半凶",
+      "meaning_ko": "중단격(中斷格): 길흉상반, 비방·중도좌절이 따름"
+    },
+    {
+      "num": 28,
+      "fortune": "凶",
+      "meaning_ko": "파란격(波亂格): 조난·이별·풍파의 흉운"
+    },
+    {
+      "num": 29,
+      "fortune": "吉",
+      "meaning_ko": "성공격(成功格): 지모·재력으로 욕망을 성취하는 길운"
+    },
+    {
+      "num": 30,
+      "fortune": "半吉半凶",
+      "meaning_ko": "부몽격(浮夢格): 길흉불명, 투기·요행의 기로에 섬"
+    },
+    {
+      "num": 31,
+      "fortune": "吉",
+      "meaning_ko": "융창격(隆昌格): 지용겸비, 두령운의 대길수"
+    },
+    {
+      "num": 32,
+      "fortune": "吉",
+      "meaning_ko": "요행격(僥倖格): 의외의 행운, 순조롭게 융창하는 길운"
+    },
+    {
+      "num": 33,
+      "fortune": "吉",
+      "meaning_ko": "승천격(昇天格): 욱일승천·권위 (여자는 기세가 너무 강함 주의)"
+    },
+    {
+      "num": 34,
+      "fortune": "凶",
+      "meaning_ko": "파멸격(破滅格): 파멸·재화·풍파, 흉변의 수"
+    },
+    {
+      "num": 35,
+      "fortune": "吉",
+      "meaning_ko": "평범격(平凡格): 안강·평화, 학문·문예로 이루는 길운"
+    },
+    {
+      "num": 36,
+      "fortune": "凶",
+      "meaning_ko": "영웅격(英雄格): 의협심 있으나 파란·풍파가 많은 흉운"
+    },
+    {
+      "num": 37,
+      "fortune": "吉",
+      "meaning_ko": "인덕격(仁德格): 충실·권위, 덕망으로 대성하는 길운"
+    },
+    {
+      "num": 38,
+      "fortune": "半吉半凶",
+      "meaning_ko": "문예격(文藝格): 문예·기예엔 길하나 통솔력 부족"
+    },
+    {
+      "num": 39,
+      "fortune": "吉",
+      "meaning_ko": "부영격(富榮格): 권세·장성, 부귀영화를 누리는 길운"
+    },
+    {
+      "num": 40,
+      "fortune": "半吉半凶",
+      "meaning_ko": "무상격(無常格): 길흉상반, 지덕은 있으나 덕망 부족"
+    },
+    {
+      "num": 41,
+      "fortune": "吉",
+      "meaning_ko": "대공격(大功格): 명예·덕망, 큰 일을 이루는 길운"
+    },
+    {
+      "num": 42,
+      "fortune": "凶",
+      "meaning_ko": "고행격(苦行格): 박이부정(博而不精)·고난·실패의 흉운"
+    },
+    {
+      "num": 43,
+      "fortune": "凶",
+      "meaning_ko": "산재격(散財格): 외화내빈·산재, 미혹에 빠지는 흉운"
+    },
+    {
+      "num": 44,
+      "fortune": "凶",
+      "meaning_ko": "마장격(魔障格): 파가망신·흉변, 패가의 수"
+    },
+    {
+      "num": 45,
+      "fortune": "吉",
+      "meaning_ko": "대지격(大智格): 순풍에 돛 단 듯 대지로 성공하는 길운"
+    },
+    {
+      "num": 46,
+      "fortune": "凶",
+      "meaning_ko": "부지격(不知格): 재보침주(載寶沈舟)·고난·실패의 흉운"
+    },
+    {
+      "num": 47,
+      "fortune": "吉",
+      "meaning_ko": "출세격(出世格): 전개·길경, 만사가 순조로운 길운"
+    },
+    {
+      "num": 48,
+      "fortune": "吉",
+      "meaning_ko": "유덕격(有德格): 지모·덕망, 고문(顧問)격의 길운"
+    },
+    {
+      "num": 49,
+      "fortune": "半吉半凶",
+      "meaning_ko": "은퇴격(隱退格): 길흉의 기로, 변화에 따라 성패가 갈림"
+    },
+    {
+      "num": 50,
+      "fortune": "凶",
+      "meaning_ko": "불행격(不幸格): 일성일패, 끝내 패가에 이르는 흉운"
+    },
+    {
+      "num": 51,
+      "fortune": "半吉半凶",
+      "meaning_ko": "길흉격(吉凶格): 성쇠부침, 선길후흉의 상반운"
+    },
+    {
+      "num": 52,
+      "fortune": "吉",
+      "meaning_ko": "약진격(躍進格): 선견지명으로 큰 뜻을 이루는 길운"
+    },
+    {
+      "num": 53,
+      "fortune": "半吉半凶",
+      "meaning_ko": "내우격(內憂格): 외화내빈, 길흉이 반반인 부침운"
+    },
+    {
+      "num": 54,
+      "fortune": "凶",
+      "meaning_ko": "다난격(多難格): 손실·다난, 패가의 흉운"
+    },
+    {
+      "num": 55,
+      "fortune": "半吉半凶",
+      "meaning_ko": "미달격(未達格): 외화내빈이나 인내하면 길로 전환"
+    },
+    {
+      "num": 56,
+      "fortune": "凶",
+      "meaning_ko": "부침격(浮沈格): 기력부족·부침, 만사 불성의 흉운"
+    },
+    {
+      "num": 57,
+      "fortune": "吉",
+      "meaning_ko": "노력격(努力格): 일난후영(一難後榮), 강건하게 성공"
+    },
+    {
+      "num": 58,
+      "fortune": "半吉半凶",
+      "meaning_ko": "후영격(後榮格): 선곤후성, 부침 끝에 만복을 누림"
+    },
+    {
+      "num": 59,
+      "fortune": "凶",
+      "meaning_ko": "불우격(不遇格): 실의·불우, 의지박약의 실패운"
+    },
+    {
+      "num": 60,
+      "fortune": "凶",
+      "meaning_ko": "동요격(動搖格): 무계획·암흑, 동요하는 흉운"
+    },
+    {
+      "num": 61,
+      "fortune": "半吉半凶",
+      "meaning_ko": "영화격(榮華格): 재리·명예의 길운이나 교만·내분 주의"
+    },
+    {
+      "num": 62,
+      "fortune": "凶",
+      "meaning_ko": "쇠퇴격(衰退格): 신의부족·고독, 쇠퇴하는 흉운"
+    },
+    {
+      "num": 63,
+      "fortune": "吉",
+      "meaning_ko": "길상격(吉祥格): 순성·부귀, 자손번창·장수의 길운"
+    },
+    {
+      "num": 64,
+      "fortune": "凶",
+      "meaning_ko": "침체격(沈滯格): 골육이별·침체, 파멸의 흉운"
+    },
+    {
+      "num": 65,
+      "fortune": "吉",
+      "meaning_ko": "완성격(完成格): 흥가·부귀, 가운이 융창·장수하는 길운"
+    },
+    {
+      "num": 66,
+      "fortune": "凶",
+      "meaning_ko": "역경격(逆境格): 내외불화·역난, 손실의 흉운"
+    },
+    {
+      "num": 67,
+      "fortune": "吉",
+      "meaning_ko": "통달격(通達格): 가운융창·축재, 만사 통달의 길운"
+    },
+    {
+      "num": 68,
+      "fortune": "吉",
+      "meaning_ko": "발명격(發明格): 지모·발명, 창의로 흥가하는 길운"
+    },
+    {
+      "num": 69,
+      "fortune": "凶",
+      "meaning_ko": "불안격(不安格): 정체·병약, 불안정한 흉운"
+    },
+    {
+      "num": 70,
+      "fortune": "凶",
+      "meaning_ko": "쇠멸격(衰滅格): 공허·참담, 멸망에 이르는 흉운"
+    },
+    {
+      "num": 71,
+      "fortune": "半吉半凶",
+      "meaning_ko": "양수격(養守格): 길흉반반, 진취성은 부족하나 수성하면 길"
+    },
+    {
+      "num": 72,
+      "fortune": "凶",
+      "meaning_ko": "상반격(相反格): 외화내빈·길흉상반, 선길후흉의 흉운"
+    },
+    {
+      "num": 73,
+      "fortune": "半吉半凶",
+      "meaning_ko": "평길격(平吉格): 무모하나 자연히 평안한 평범의 길"
+    },
+    {
+      "num": 74,
+      "fortune": "凶",
+      "meaning_ko": "우매격(愚昧格): 무지무능·불교(不交), 고난의 흉운"
+    },
+    {
+      "num": 75,
+      "fortune": "半吉半凶",
+      "meaning_ko": "퇴수격(退守格): 보수하면 길, 진취하면 흉한 상반운"
+    },
+    {
+      "num": 76,
+      "fortune": "凶",
+      "meaning_ko": "이산격(離散格): 내외곤고·붕괴, 이산의 흉운"
+    },
+    {
+      "num": 77,
+      "fortune": "半吉半凶",
+      "meaning_ko": "전후격(前後格): 선길후흉(또는 선흉후길)의 상반운"
+    },
+    {
+      "num": 78,
+      "fortune": "半吉半凶",
+      "meaning_ko": "선길격(先吉格): 선영후쇠, 중년까지 길하나 만년 쇠퇴"
+    },
+    {
+      "num": 79,
+      "fortune": "凶",
+      "meaning_ko": "종극격(終極格): 무기력·빈궁, 펴지 못하는(不伸) 흉운"
+    },
+    {
+      "num": 80,
+      "fortune": "凶",
+      "meaning_ko": "종결격(終結格): 곤고·종말, 은둔하면 무난한 흉운"
+    },
+    {
+      "num": 81,
+      "fortune": "吉",
+      "meaning_ko": "환원격(還元格): 만물회춘, 1로 되돌아가는 최대 길운"
+    }
+  ],
+  "baleumOhaeng": {
+    "consonantToElement": {
+      "ㄱ": "木",
+      "ㅋ": "木",
+      "ㄴ": "火",
+      "ㄷ": "火",
+      "ㄹ": "火",
+      "ㅌ": "火",
+      "ㅇ": "土",
+      "ㅎ": "土",
+      "ㅅ": "金",
+      "ㅈ": "金",
+      "ㅊ": "金",
+      "ㅁ": "水",
+      "ㅂ": "水",
+      "ㅍ": "水"
+    },
+    "consonantGroups": {
+      "牙音(아음/어금닛소리)": {
+        "consonants": [
+          "ㄱ",
+          "ㅋ"
+        ],
+        "element": "木"
+      },
+      "舌音(설음/혓소리)": {
+        "consonants": [
+          "ㄴ",
+          "ㄷ",
+          "ㄹ",
+          "ㅌ"
+        ],
+        "element": "火"
+      },
+      "喉音(후음/목구멍소리)": {
+        "consonants": [
+          "ㅇ",
+          "ㅎ"
+        ],
+        "element": "土"
+      },
+      "齒音(치음/잇소리)": {
+        "consonants": [
+          "ㅅ",
+          "ㅈ",
+          "ㅊ"
+        ],
+        "element": "金"
+      },
+      "脣音(순음/입술소리)": {
+        "consonants": [
+          "ㅁ",
+          "ㅂ",
+          "ㅍ"
+        ],
+        "element": "水"
+      }
+    },
+    "sangsaeng": [
+      [
+        "木",
+        "火"
+      ],
+      [
+        "火",
+        "土"
+      ],
+      [
+        "土",
+        "金"
+      ],
+      [
+        "金",
+        "水"
+      ],
+      [
+        "水",
+        "木"
+      ]
+    ],
+    "sanggeuk": [
+      [
+        "木",
+        "土"
+      ],
+      [
+        "土",
+        "水"
+      ],
+      [
+        "水",
+        "火"
+      ],
+      [
+        "火",
+        "金"
+      ],
+      [
+        "金",
+        "木"
+      ]
+    ],
+    "confirmed": true,
+    "note": "제시된 매핑은 현대 한국 수리·성명학에서 통용되는 표준 발음오행과 일치한다(아음 ㄱㅋ=木, 설음 ㄴㄷㄹㅌ=火, 후음 ㅇㅎ=土, 치음 ㅅㅈㅊ=金, 순음 ㅁㅂㅍ=水). 단, 훈민정음 제자해 원문은 喉音(ㅇㅎ)=水, 脣音(ㅁㅂㅍ)=土로 배속하여 본 표와 후음/순음이 서로 바뀌어 있다(학파별 쟁점). 상생/상극 순환은 표준과 일치하여 정확함."
+  },
+  "bushuOhaeng": [
+    {
+      "radicalNum": 1,
+      "radical": "一",
+      "hangul": "일",
+      "element": "土",
+      "note": "1획 추상부수, 학파별 土/水 상이"
+    },
+    {
+      "radicalNum": 2,
+      "radical": "丨",
+      "hangul": "곤",
+      "element": "木",
+      "note": "1획 추상부수"
+    },
+    {
+      "radicalNum": 3,
+      "radical": "丶",
+      "hangul": "주",
+      "element": "火",
+      "note": "점/불똥, 1획 추상부수"
+    },
+    {
+      "radicalNum": 4,
+      "radical": "丿",
+      "hangul": "별",
+      "element": "火",
+      "note": "삐침, 1획 추상부수"
+    },
+    {
+      "radicalNum": 5,
+      "radical": "乙",
+      "hangul": "을",
+      "element": "木",
+      "note": "초목이 굽어 싹트는 모양"
+    },
+    {
+      "radicalNum": 6,
+      "radical": "亅",
+      "hangul": "궐",
+      "element": "木",
+      "note": "갈고리, 1획 추상부수(金으로 보는 설도)"
+    },
+    {
+      "radicalNum": 7,
+      "radical": "二",
+      "hangul": "이",
+      "element": "火",
+      "note": "학파별 火/土 상이"
+    },
+    {
+      "radicalNum": 8,
+      "radical": "亠",
+      "hangul": "두",
+      "element": "火",
+      "note": "돼지해머리"
+    },
+    {
+      "radicalNum": 9,
+      "radical": "人",
+      "hangul": "인",
+      "element": "火",
+      "note": "사람(亻 동일)"
+    },
+    {
+      "radicalNum": 10,
+      "radical": "儿",
+      "hangul": "인",
+      "element": "火",
+      "note": "어진사람"
+    },
+    {
+      "radicalNum": 11,
+      "radical": "入",
+      "hangul": "입",
+      "element": "木",
+      "note": "들 입"
+    },
+    {
+      "radicalNum": 12,
+      "radical": "八",
+      "hangul": "팔",
+      "element": "木",
+      "note": "나눔, 학파별 木/金"
+    },
+    {
+      "radicalNum": 13,
+      "radical": "冂",
+      "hangul": "경",
+      "element": "木",
+      "note": "멀 경/경계"
+    },
+    {
+      "radicalNum": 14,
+      "radical": "冖",
+      "hangul": "멱",
+      "element": "木",
+      "note": "덮을 멱, 학파별 木/水"
+    },
+    {
+      "radicalNum": 15,
+      "radical": "冫",
+      "hangul": "빙",
+      "element": "水",
+      "note": "얼음(이수변)"
+    },
+    {
+      "radicalNum": 16,
+      "radical": "几",
+      "hangul": "궤",
+      "element": "木",
+      "note": "안석/책상"
+    },
+    {
+      "radicalNum": 17,
+      "radical": "凵",
+      "hangul": "감",
+      "element": "土",
+      "note": "입벌릴/구덩이"
+    },
+    {
+      "radicalNum": 18,
+      "radical": "刀",
+      "hangul": "도",
+      "element": "金",
+      "note": "칼(刂 동일)"
+    },
+    {
+      "radicalNum": 19,
+      "radical": "力",
+      "hangul": "력",
+      "element": "木",
+      "note": "힘/근육, 학파별 木/土"
+    },
+    {
+      "radicalNum": 20,
+      "radical": "勹",
+      "hangul": "포",
+      "element": "金",
+      "note": "쌀 포, 학파별 金/木"
+    },
+    {
+      "radicalNum": 21,
+      "radical": "匕",
+      "hangul": "비",
+      "element": "金",
+      "note": "비수/숟가락"
+    },
+    {
+      "radicalNum": 22,
+      "radical": "匚",
+      "hangul": "방",
+      "element": "木",
+      "note": "상자 방"
+    },
+    {
+      "radicalNum": 23,
+      "radical": "匸",
+      "hangul": "혜",
+      "element": "木",
+      "note": "감출 혜"
+    },
+    {
+      "radicalNum": 24,
+      "radical": "十",
+      "hangul": "십",
+      "element": "水",
+      "note": "열 십, 학파별 水/土"
+    },
+    {
+      "radicalNum": 25,
+      "radical": "卜",
+      "hangul": "복",
+      "element": "火",
+      "note": "점 복"
+    },
+    {
+      "radicalNum": 26,
+      "radical": "卩",
+      "hangul": "절",
+      "element": "火",
+      "note": "병부 절, 학파별 火/土"
+    },
+    {
+      "radicalNum": 27,
+      "radical": "厂",
+      "hangul": "한",
+      "element": "土",
+      "note": "언덕/굴바위"
+    },
+    {
+      "radicalNum": 28,
+      "radical": "厶",
+      "hangul": "사",
+      "element": "金",
+      "note": "사사 사, 추상부수"
+    },
+    {
+      "radicalNum": 29,
+      "radical": "又",
+      "hangul": "우",
+      "element": "水",
+      "note": "또/오른손, 학파별 水/土"
+    },
+    {
+      "radicalNum": 30,
+      "radical": "口",
+      "hangul": "구",
+      "element": "水",
+      "note": "입 구"
+    },
+    {
+      "radicalNum": 31,
+      "radical": "囗",
+      "hangul": "위",
+      "element": "土",
+      "note": "에울 위/나라"
+    },
+    {
+      "radicalNum": 32,
+      "radical": "土",
+      "hangul": "토",
+      "element": "土",
+      "note": "흙 토"
+    },
+    {
+      "radicalNum": 33,
+      "radical": "士",
+      "hangul": "사",
+      "element": "土",
+      "note": "선비, 학파별 土/金"
+    },
+    {
+      "radicalNum": 34,
+      "radical": "夂",
+      "hangul": "치",
+      "element": "火",
+      "note": "뒤져올 치(발), 학파별 火/土"
+    },
+    {
+      "radicalNum": 35,
+      "radical": "夊",
+      "hangul": "쇠",
+      "element": "火",
+      "note": "천천히걸을 쇠(발)"
+    },
+    {
+      "radicalNum": 36,
+      "radical": "夕",
+      "hangul": "석",
+      "element": "水",
+      "note": "저녁/달"
+    },
+    {
+      "radicalNum": 37,
+      "radical": "大",
+      "hangul": "대",
+      "element": "木",
+      "note": "큰 대, 학파별 木/火"
+    },
+    {
+      "radicalNum": 38,
+      "radical": "女",
+      "hangul": "녀",
+      "element": "土",
+      "note": "계집 녀"
+    },
+    {
+      "radicalNum": 39,
+      "radical": "子",
+      "hangul": "자",
+      "element": "水",
+      "note": "아들/씨, 子=水"
+    },
+    {
+      "radicalNum": 40,
+      "radical": "宀",
+      "hangul": "면",
+      "element": "木",
+      "note": "집 면(갓머리)"
+    },
+    {
+      "radicalNum": 41,
+      "radical": "寸",
+      "hangul": "촌",
+      "element": "土",
+      "note": "마디/손, 학파별 土/金"
+    },
+    {
+      "radicalNum": 42,
+      "radical": "小",
+      "hangul": "소",
+      "element": "水",
+      "note": "작을 소, 학파별 水/金"
+    },
+    {
+      "radicalNum": 43,
+      "radical": "尢",
+      "hangul": "왕",
+      "element": "土",
+      "note": "절름발이 왕(尤)"
+    },
+    {
+      "radicalNum": 44,
+      "radical": "尸",
+      "hangul": "시",
+      "element": "水",
+      "note": "주검/몸, 학파별 水/木"
+    },
+    {
+      "radicalNum": 45,
+      "radical": "屮",
+      "hangul": "철",
+      "element": "木",
+      "note": "싹날 철"
+    },
+    {
+      "radicalNum": 46,
+      "radical": "山",
+      "hangul": "산",
+      "element": "土",
+      "note": "메 산"
+    },
+    {
+      "radicalNum": 47,
+      "radical": "巛",
+      "hangul": "천",
+      "element": "水",
+      "note": "내 천(川)"
+    },
+    {
+      "radicalNum": 48,
+      "radical": "工",
+      "hangul": "공",
+      "element": "木",
+      "note": "장인/연장, 학파별 木/火"
+    },
+    {
+      "radicalNum": 49,
+      "radical": "己",
+      "hangul": "기",
+      "element": "土",
+      "note": "몸/자기, 己=土"
+    },
+    {
+      "radicalNum": 50,
+      "radical": "巾",
+      "hangul": "건",
+      "element": "木",
+      "note": "수건/천"
+    },
+    {
+      "radicalNum": 51,
+      "radical": "干",
+      "hangul": "간",
+      "element": "木",
+      "note": "방패 간, 학파별 木/金"
+    },
+    {
+      "radicalNum": 52,
+      "radical": "幺",
+      "hangul": "요",
+      "element": "火",
+      "note": "작을/실 요, 학파별 火/木"
+    },
+    {
+      "radicalNum": 53,
+      "radical": "广",
+      "hangul": "엄",
+      "element": "木",
+      "note": "집 엄(엄호)"
+    },
+    {
+      "radicalNum": 54,
+      "radical": "廴",
+      "hangul": "인",
+      "element": "火",
+      "note": "길게걸을 인"
+    },
+    {
+      "radicalNum": 55,
+      "radical": "廾",
+      "hangul": "공",
+      "element": "木",
+      "note": "두손 받들 공"
+    },
+    {
+      "radicalNum": 56,
+      "radical": "弋",
+      "hangul": "익",
+      "element": "金",
+      "note": "주살 익"
+    },
+    {
+      "radicalNum": 57,
+      "radical": "弓",
+      "hangul": "궁",
+      "element": "金",
+      "note": "활 궁, 학파별 金/木"
+    },
+    {
+      "radicalNum": 58,
+      "radical": "彐",
+      "hangul": "계",
+      "element": "火",
+      "note": "돼지머리 계(彑)"
+    },
+    {
+      "radicalNum": 59,
+      "radical": "彡",
+      "hangul": "삼",
+      "element": "火",
+      "note": "터럭/빛 삼"
+    },
+    {
+      "radicalNum": 60,
+      "radical": "彳",
+      "hangul": "척",
+      "element": "火",
+      "note": "조금걸을 척"
+    },
+    {
+      "radicalNum": 61,
+      "radical": "心",
+      "hangul": "심",
+      "element": "火",
+      "note": "마음 심(忄 동일)"
+    },
+    {
+      "radicalNum": 62,
+      "radical": "戈",
+      "hangul": "과",
+      "element": "金",
+      "note": "창 과"
+    },
+    {
+      "radicalNum": 63,
+      "radical": "戶",
+      "hangul": "호",
+      "element": "木",
+      "note": "지게문 호"
+    },
+    {
+      "radicalNum": 64,
+      "radical": "手",
+      "hangul": "수",
+      "element": "木",
+      "note": "손 수(扌), 학파별 木/水"
+    },
+    {
+      "radicalNum": 65,
+      "radical": "支",
+      "hangul": "지",
+      "element": "木",
+      "note": "가지/지탱, 학파별 木/火"
+    },
+    {
+      "radicalNum": 66,
+      "radical": "攴",
+      "hangul": "복",
+      "element": "金",
+      "note": "칠 복(攵), 학파별 金/木"
+    },
+    {
+      "radicalNum": 67,
+      "radical": "文",
+      "hangul": "문",
+      "element": "木",
+      "note": "글월 문, 학파별 木/水"
+    },
+    {
+      "radicalNum": 68,
+      "radical": "斗",
+      "hangul": "두",
+      "element": "火",
+      "note": "말/구기 두, 학파별 火/金"
+    },
+    {
+      "radicalNum": 69,
+      "radical": "斤",
+      "hangul": "근",
+      "element": "金",
+      "note": "도끼/근"
+    },
+    {
+      "radicalNum": 70,
+      "radical": "方",
+      "hangul": "방",
+      "element": "土",
+      "note": "모/방위 방, 학파별 土/木"
+    },
+    {
+      "radicalNum": 71,
+      "radical": "无",
+      "hangul": "무",
+      "element": "火",
+      "note": "없을 무(旡)"
+    },
+    {
+      "radicalNum": 72,
+      "radical": "日",
+      "hangul": "일",
+      "element": "火",
+      "note": "날/해 일"
+    },
+    {
+      "radicalNum": 73,
+      "radical": "曰",
+      "hangul": "왈",
+      "element": "火",
+      "note": "가로 왈, 학파별 火/水"
+    },
+    {
+      "radicalNum": 74,
+      "radical": "月",
+      "hangul": "월",
+      "element": "水",
+      "note": "달 월; 肉(고기달)도 水"
+    },
+    {
+      "radicalNum": 75,
+      "radical": "木",
+      "hangul": "목",
+      "element": "木",
+      "note": "나무 목"
+    },
+    {
+      "radicalNum": 76,
+      "radical": "欠",
+      "hangul": "흠",
+      "element": "金",
+      "note": "하품/모자랄, 학파별 金/火"
+    },
+    {
+      "radicalNum": 77,
+      "radical": "止",
+      "hangul": "지",
+      "element": "土",
+      "note": "그칠/발 지"
+    },
+    {
+      "radicalNum": 78,
+      "radical": "歹",
+      "hangul": "알",
+      "element": "水",
+      "note": "앙상한뼈/죽음, 학파별 水/金"
+    },
+    {
+      "radicalNum": 79,
+      "radical": "殳",
+      "hangul": "수",
+      "element": "金",
+      "note": "창/몽둥이 수"
+    },
+    {
+      "radicalNum": 80,
+      "radical": "毋",
+      "hangul": "무",
+      "element": "土",
+      "note": "말 무/어머니, 학파별 土/水"
+    },
+    {
+      "radicalNum": 81,
+      "radical": "比",
+      "hangul": "비",
+      "element": "火",
+      "note": "견줄 비"
+    },
+    {
+      "radicalNum": 82,
+      "radical": "毛",
+      "hangul": "모",
+      "element": "火",
+      "note": "털 모, 학파별 火/木"
+    },
+    {
+      "radicalNum": 83,
+      "radical": "氏",
+      "hangul": "씨",
+      "element": "火",
+      "note": "성씨/뿌리, 학파별 火/土"
+    },
+    {
+      "radicalNum": 84,
+      "radical": "气",
+      "hangul": "기",
+      "element": "水",
+      "note": "기운 기"
+    },
+    {
+      "radicalNum": 85,
+      "radical": "水",
+      "hangul": "수",
+      "element": "水",
+      "note": "물 수(氵·氺 동일)"
+    },
+    {
+      "radicalNum": 86,
+      "radical": "火",
+      "hangul": "화",
+      "element": "火",
+      "note": "불 화(灬 동일)"
+    },
+    {
+      "radicalNum": 87,
+      "radical": "爪",
+      "hangul": "조",
+      "element": "金",
+      "note": "손톱 조, 학파별 金/木"
+    },
+    {
+      "radicalNum": 88,
+      "radical": "父",
+      "hangul": "부",
+      "element": "木",
+      "note": "아비 부, 학파별 木/金"
+    },
+    {
+      "radicalNum": 89,
+      "radical": "爻",
+      "hangul": "효",
+      "element": "火",
+      "note": "점괘/사귈 효"
+    },
+    {
+      "radicalNum": 90,
+      "radical": "爿",
+      "hangul": "장",
+      "element": "木",
+      "note": "나뭇조각 장(왼쪽 평상)"
+    },
+    {
+      "radicalNum": 91,
+      "radical": "片",
+      "hangul": "편",
+      "element": "木",
+      "note": "조각 편"
+    },
+    {
+      "radicalNum": 92,
+      "radical": "牙",
+      "hangul": "아",
+      "element": "金",
+      "note": "어금니 아"
+    },
+    {
+      "radicalNum": 93,
+      "radical": "牛",
+      "hangul": "우",
+      "element": "土",
+      "note": "소 우(牜)"
+    },
+    {
+      "radicalNum": 94,
+      "radical": "犬",
+      "hangul": "견",
+      "element": "土",
+      "note": "개 견(犭)"
+    },
+    {
+      "radicalNum": 95,
+      "radical": "玄",
+      "hangul": "현",
+      "element": "水",
+      "note": "검을 현, 학파별 水/火"
+    },
+    {
+      "radicalNum": 96,
+      "radical": "玉",
+      "hangul": "옥",
+      "element": "金",
+      "note": "구슬/옥(王 형태)"
+    },
+    {
+      "radicalNum": 97,
+      "radical": "瓜",
+      "hangul": "과",
+      "element": "木",
+      "note": "오이 과"
+    },
+    {
+      "radicalNum": 98,
+      "radical": "瓦",
+      "hangul": "와",
+      "element": "土",
+      "note": "기와 와(질그릇)"
+    },
+    {
+      "radicalNum": 99,
+      "radical": "甘",
+      "hangul": "감",
+      "element": "土",
+      "note": "달 감"
+    },
+    {
+      "radicalNum": 100,
+      "radical": "生",
+      "hangul": "생",
+      "element": "木",
+      "note": "날/낳을 생"
+    },
+    {
+      "radicalNum": 101,
+      "radical": "用",
+      "hangul": "용",
+      "element": "水",
+      "note": "쓸 용, 학파별 水/土"
+    },
+    {
+      "radicalNum": 102,
+      "radical": "田",
+      "hangul": "전",
+      "element": "土",
+      "note": "밭 전"
+    },
+    {
+      "radicalNum": 103,
+      "radical": "疋",
+      "hangul": "필",
+      "element": "土",
+      "note": "발/필 필, 학파별 土/木"
+    },
+    {
+      "radicalNum": 104,
+      "radical": "疒",
+      "hangul": "녁",
+      "element": "水",
+      "note": "병들 녁"
+    },
+    {
+      "radicalNum": 105,
+      "radical": "癶",
+      "hangul": "발",
+      "element": "火",
+      "note": "걸을/등질 발"
+    },
+    {
+      "radicalNum": 106,
+      "radical": "白",
+      "hangul": "백",
+      "element": "金",
+      "note": "흰 백=西方金"
+    },
+    {
+      "radicalNum": 107,
+      "radical": "皮",
+      "hangul": "피",
+      "element": "水",
+      "note": "가죽 피, 학파별 水/木"
+    },
+    {
+      "radicalNum": 108,
+      "radical": "皿",
+      "hangul": "명",
+      "element": "金",
+      "note": "그릇 명, 학파별 金/水"
+    },
+    {
+      "radicalNum": 109,
+      "radical": "目",
+      "hangul": "목",
+      "element": "木",
+      "note": "눈 목"
+    },
+    {
+      "radicalNum": 110,
+      "radical": "矛",
+      "hangul": "모",
+      "element": "金",
+      "note": "창 모"
+    },
+    {
+      "radicalNum": 111,
+      "radical": "矢",
+      "hangul": "시",
+      "element": "金",
+      "note": "화살 시"
+    },
+    {
+      "radicalNum": 112,
+      "radical": "石",
+      "hangul": "석",
+      "element": "金",
+      "note": "돌 석, 학파별 金/土"
+    },
+    {
+      "radicalNum": 113,
+      "radical": "示",
+      "hangul": "시",
+      "element": "木",
+      "note": "보일/제단 시(礻), 학파별 木/金"
+    },
+    {
+      "radicalNum": 114,
+      "radical": "禸",
+      "hangul": "유",
+      "element": "土",
+      "note": "짐승발자국 유"
+    },
+    {
+      "radicalNum": 115,
+      "radical": "禾",
+      "hangul": "화",
+      "element": "木",
+      "note": "벼 화"
+    },
+    {
+      "radicalNum": 116,
+      "radical": "穴",
+      "hangul": "혈",
+      "element": "水",
+      "note": "구멍 혈, 학파별 水/土"
+    },
+    {
+      "radicalNum": 117,
+      "radical": "立",
+      "hangul": "립",
+      "element": "木",
+      "note": "설 립, 학파별 木/火"
+    },
+    {
+      "radicalNum": 118,
+      "radical": "竹",
+      "hangul": "죽",
+      "element": "木",
+      "note": "대 죽(⺮)"
+    },
+    {
+      "radicalNum": 119,
+      "radical": "米",
+      "hangul": "미",
+      "element": "木",
+      "note": "쌀 미"
+    },
+    {
+      "radicalNum": 120,
+      "radical": "糸",
+      "hangul": "사",
+      "element": "木",
+      "note": "실 사(糹)"
+    },
+    {
+      "radicalNum": 121,
+      "radical": "缶",
+      "hangul": "부",
+      "element": "土",
+      "note": "장군/질그릇 부"
+    },
+    {
+      "radicalNum": 122,
+      "radical": "网",
+      "hangul": "망",
+      "element": "木",
+      "note": "그물 망(罒·罓), 학파별 木/水"
+    },
+    {
+      "radicalNum": 123,
+      "radical": "羊",
+      "hangul": "양",
+      "element": "土",
+      "note": "양 양"
+    },
+    {
+      "radicalNum": 124,
+      "radical": "羽",
+      "hangul": "우",
+      "element": "火",
+      "note": "깃 우, 학파별 火/水"
+    },
+    {
+      "radicalNum": 125,
+      "radical": "老",
+      "hangul": "로",
+      "element": "土",
+      "note": "늙을 로(耂)"
+    },
+    {
+      "radicalNum": 126,
+      "radical": "而",
+      "hangul": "이",
+      "element": "水",
+      "note": "말이을/수염, 학파별 水/火"
+    },
+    {
+      "radicalNum": 127,
+      "radical": "耒",
+      "hangul": "뢰",
+      "element": "木",
+      "note": "쟁기 뢰"
+    },
+    {
+      "radicalNum": 128,
+      "radical": "耳",
+      "hangul": "이",
+      "element": "火",
+      "note": "귀 이, 학파별 火/水"
+    },
+    {
+      "radicalNum": 129,
+      "radical": "聿",
+      "hangul": "율",
+      "element": "火",
+      "note": "붓 율, 학파별 火/木"
+    },
+    {
+      "radicalNum": 130,
+      "radical": "肉",
+      "hangul": "육",
+      "element": "水",
+      "note": "고기/살 육(⺼)"
+    },
+    {
+      "radicalNum": 131,
+      "radical": "臣",
+      "hangul": "신",
+      "element": "火",
+      "note": "신하 신, 학파별 火/金"
+    },
+    {
+      "radicalNum": 132,
+      "radical": "自",
+      "hangul": "자",
+      "element": "火",
+      "note": "스스로/코 자"
+    },
+    {
+      "radicalNum": 133,
+      "radical": "至",
+      "hangul": "지",
+      "element": "土",
+      "note": "이를 지"
+    },
+    {
+      "radicalNum": 134,
+      "radical": "臼",
+      "hangul": "구",
+      "element": "土",
+      "note": "절구 구"
+    },
+    {
+      "radicalNum": 135,
+      "radical": "舌",
+      "hangul": "설",
+      "element": "火",
+      "note": "혀 설"
+    },
+    {
+      "radicalNum": 136,
+      "radical": "舛",
+      "hangul": "천",
+      "element": "木",
+      "note": "어그러질 천(두 발)"
+    },
+    {
+      "radicalNum": 137,
+      "radical": "舟",
+      "hangul": "주",
+      "element": "木",
+      "note": "배 주, 학파별 木/水"
+    },
+    {
+      "radicalNum": 138,
+      "radical": "艮",
+      "hangul": "간",
+      "element": "土",
+      "note": "그칠/산 간(간방)"
+    },
+    {
+      "radicalNum": 139,
+      "radical": "色",
+      "hangul": "색",
+      "element": "土",
+      "note": "빛 색"
+    },
+    {
+      "radicalNum": 140,
+      "radical": "艸",
+      "hangul": "초",
+      "element": "木",
+      "note": "풀 초(艹)"
+    },
+    {
+      "radicalNum": 141,
+      "radical": "虍",
+      "hangul": "호",
+      "element": "木",
+      "note": "범 호, 학파별 木/土"
+    },
+    {
+      "radicalNum": 142,
+      "radical": "虫",
+      "hangul": "충",
+      "element": "水",
+      "note": "벌레 충, 학파별 水/木"
+    },
+    {
+      "radicalNum": 143,
+      "radical": "血",
+      "hangul": "혈",
+      "element": "水",
+      "note": "피 혈"
+    },
+    {
+      "radicalNum": 144,
+      "radical": "行",
+      "hangul": "행",
+      "element": "火",
+      "note": "다닐 행, 학파별 火/金"
+    },
+    {
+      "radicalNum": 145,
+      "radical": "衣",
+      "hangul": "의",
+      "element": "木",
+      "note": "옷 의(衤)"
+    },
+    {
+      "radicalNum": 146,
+      "radical": "襾",
+      "hangul": "아",
+      "element": "金",
+      "note": "덮을 아/서녘 西(覀)=金"
+    },
+    {
+      "radicalNum": 147,
+      "radical": "見",
+      "hangul": "견",
+      "element": "火",
+      "note": "볼 견, 학파별 火/木"
+    },
+    {
+      "radicalNum": 148,
+      "radical": "角",
+      "hangul": "각",
+      "element": "木",
+      "note": "뿔 각"
+    },
+    {
+      "radicalNum": 149,
+      "radical": "言",
+      "hangul": "언",
+      "element": "金",
+      "note": "말씀 언=齒音金"
+    },
+    {
+      "radicalNum": 150,
+      "radical": "谷",
+      "hangul": "곡",
+      "element": "水",
+      "note": "골/계곡 곡"
+    },
+    {
+      "radicalNum": 151,
+      "radical": "豆",
+      "hangul": "두",
+      "element": "木",
+      "note": "콩/제기 두, 학파별 木/土"
+    },
+    {
+      "radicalNum": 152,
+      "radical": "豕",
+      "hangul": "시",
+      "element": "水",
+      "note": "돼지 시=亥水"
+    },
+    {
+      "radicalNum": 153,
+      "radical": "豸",
+      "hangul": "치",
+      "element": "水",
+      "note": "해태/벌레 치"
+    },
+    {
+      "radicalNum": 154,
+      "radical": "貝",
+      "hangul": "패",
+      "element": "金",
+      "note": "조개/재물 패"
+    },
+    {
+      "radicalNum": 155,
+      "radical": "赤",
+      "hangul": "적",
+      "element": "火",
+      "note": "붉을 적=南方火"
+    },
+    {
+      "radicalNum": 156,
+      "radical": "走",
+      "hangul": "주",
+      "element": "火",
+      "note": "달릴 주"
+    },
+    {
+      "radicalNum": 157,
+      "radical": "足",
+      "hangul": "족",
+      "element": "土",
+      "note": "발 족(⻊)"
+    },
+    {
+      "radicalNum": 158,
+      "radical": "身",
+      "hangul": "신",
+      "element": "火",
+      "note": "몸 신, 학파별 火/木"
+    },
+    {
+      "radicalNum": 159,
+      "radical": "車",
+      "hangul": "거",
+      "element": "火",
+      "note": "수레 거/차, 학파별 火/金"
+    },
+    {
+      "radicalNum": 160,
+      "radical": "辛",
+      "hangul": "신",
+      "element": "金",
+      "note": "매울 신(칼날)"
+    },
+    {
+      "radicalNum": 161,
+      "radical": "辰",
+      "hangul": "진",
+      "element": "土",
+      "note": "별/용 진=辰土"
+    },
+    {
+      "radicalNum": 162,
+      "radical": "辵",
+      "hangul": "착",
+      "element": "土",
+      "note": "쉬엄쉬엄갈 착(辶), 학파별 土/火"
+    },
+    {
+      "radicalNum": 163,
+      "radical": "邑",
+      "hangul": "읍",
+      "element": "土",
+      "note": "고을 읍(우부방 ⻏)"
+    },
+    {
+      "radicalNum": 164,
+      "radical": "酉",
+      "hangul": "유",
+      "element": "金",
+      "note": "술/닭 유=酉金"
+    },
+    {
+      "radicalNum": 165,
+      "radical": "釆",
+      "hangul": "변",
+      "element": "木",
+      "note": "분별할 변, 학파별 木/金"
+    },
+    {
+      "radicalNum": 166,
+      "radical": "里",
+      "hangul": "리",
+      "element": "土",
+      "note": "마을 리"
+    },
+    {
+      "radicalNum": 167,
+      "radical": "金",
+      "hangul": "금",
+      "element": "金",
+      "note": "쇠 금"
+    },
+    {
+      "radicalNum": 168,
+      "radical": "長",
+      "hangul": "장",
+      "element": "木",
+      "note": "길 장(자람), 학파별 木/金"
+    },
+    {
+      "radicalNum": 169,
+      "radical": "門",
+      "hangul": "문",
+      "element": "木",
+      "note": "문 문, 학파별 木/火"
+    },
+    {
+      "radicalNum": 170,
+      "radical": "阜",
+      "hangul": "부",
+      "element": "土",
+      "note": "언덕 부(좌부변 ⻖)"
+    },
+    {
+      "radicalNum": 171,
+      "radical": "隶",
+      "hangul": "이",
+      "element": "水",
+      "note": "미칠 이, 학파별 水/火"
+    },
+    {
+      "radicalNum": 172,
+      "radical": "隹",
+      "hangul": "추",
+      "element": "火",
+      "note": "새 추, 학파별 火/水"
+    },
+    {
+      "radicalNum": 173,
+      "radical": "雨",
+      "hangul": "우",
+      "element": "水",
+      "note": "비 우"
+    },
+    {
+      "radicalNum": 174,
+      "radical": "靑",
+      "hangul": "청",
+      "element": "木",
+      "note": "푸를 청=東方木"
+    },
+    {
+      "radicalNum": 175,
+      "radical": "非",
+      "hangul": "비",
+      "element": "水",
+      "note": "아닐 비, 학파별 水/火"
+    },
+    {
+      "radicalNum": 176,
+      "radical": "面",
+      "hangul": "면",
+      "element": "火",
+      "note": "낯 면, 학파별 火/水"
+    },
+    {
+      "radicalNum": 177,
+      "radical": "革",
+      "hangul": "혁",
+      "element": "金",
+      "note": "가죽 혁, 학파별 金/水"
+    },
+    {
+      "radicalNum": 178,
+      "radical": "韋",
+      "hangul": "위",
+      "element": "金",
+      "note": "다룸가죽 위, 학파별 金/土"
+    },
+    {
+      "radicalNum": 179,
+      "radical": "韭",
+      "hangul": "구",
+      "element": "木",
+      "note": "부추 구"
+    },
+    {
+      "radicalNum": 180,
+      "radical": "音",
+      "hangul": "음",
+      "element": "金",
+      "note": "소리 음"
+    },
+    {
+      "radicalNum": 181,
+      "radical": "頁",
+      "hangul": "혈",
+      "element": "火",
+      "note": "머리 혈, 학파별 火/水"
+    },
+    {
+      "radicalNum": 182,
+      "radical": "風",
+      "hangul": "풍",
+      "element": "木",
+      "note": "바람 풍=巽木"
+    },
+    {
+      "radicalNum": 183,
+      "radical": "飛",
+      "hangul": "비",
+      "element": "火",
+      "note": "날 비(새)"
+    },
+    {
+      "radicalNum": 184,
+      "radical": "食",
+      "hangul": "식",
+      "element": "水",
+      "note": "밥/음식 식(飠), 학파별 水/火"
+    },
+    {
+      "radicalNum": 185,
+      "radical": "首",
+      "hangul": "수",
+      "element": "水",
+      "note": "머리 수, 학파별 水/火"
+    },
+    {
+      "radicalNum": 186,
+      "radical": "香",
+      "hangul": "향",
+      "element": "木",
+      "note": "향기 향"
+    },
+    {
+      "radicalNum": 187,
+      "radical": "馬",
+      "hangul": "마",
+      "element": "火",
+      "note": "말 마=午火"
+    },
+    {
+      "radicalNum": 188,
+      "radical": "骨",
+      "hangul": "골",
+      "element": "金",
+      "note": "뼈 골, 학파별 金/水"
+    },
+    {
+      "radicalNum": 189,
+      "radical": "高",
+      "hangul": "고",
+      "element": "木",
+      "note": "높을 고, 학파별 木/火"
+    },
+    {
+      "radicalNum": 190,
+      "radical": "髟",
+      "hangul": "표",
+      "element": "火",
+      "note": "머리털 드리울 표"
+    },
+    {
+      "radicalNum": 191,
+      "radical": "鬥",
+      "hangul": "투",
+      "element": "金",
+      "note": "싸울 투, 학파별 金/火"
+    },
+    {
+      "radicalNum": 192,
+      "radical": "鬯",
+      "hangul": "창",
+      "element": "木",
+      "note": "울창주 창, 학파별 木/水"
+    },
+    {
+      "radicalNum": 193,
+      "radical": "鬲",
+      "hangul": "력",
+      "element": "土",
+      "note": "솥 력/막을 격, 학파별 土/火"
+    },
+    {
+      "radicalNum": 194,
+      "radical": "鬼",
+      "hangul": "귀",
+      "element": "火",
+      "note": "귀신 귀, 학파별 火/水"
+    },
+    {
+      "radicalNum": 195,
+      "radical": "魚",
+      "hangul": "어",
+      "element": "水",
+      "note": "물고기 어"
+    },
+    {
+      "radicalNum": 196,
+      "radical": "鳥",
+      "hangul": "조",
+      "element": "火",
+      "note": "새 조, 학파별 火/水"
+    },
+    {
+      "radicalNum": 197,
+      "radical": "鹵",
+      "hangul": "로",
+      "element": "土",
+      "note": "소금밭 로, 학파별 土/金"
+    },
+    {
+      "radicalNum": 198,
+      "radical": "鹿",
+      "hangul": "록",
+      "element": "土",
+      "note": "사슴 록"
+    },
+    {
+      "radicalNum": 199,
+      "radical": "麥",
+      "hangul": "맥",
+      "element": "木",
+      "note": "보리 맥"
+    },
+    {
+      "radicalNum": 200,
+      "radical": "麻",
+      "hangul": "마",
+      "element": "木",
+      "note": "삼 마"
+    },
+    {
+      "radicalNum": 201,
+      "radical": "黃",
+      "hangul": "황",
+      "element": "土",
+      "note": "누를 황=中央土"
+    },
+    {
+      "radicalNum": 202,
+      "radical": "黍",
+      "hangul": "서",
+      "element": "木",
+      "note": "기장 서"
+    },
+    {
+      "radicalNum": 203,
+      "radical": "黑",
+      "hangul": "흑",
+      "element": "水",
+      "note": "검을 흑=北方水"
+    },
+    {
+      "radicalNum": 204,
+      "radical": "黹",
+      "hangul": "치",
+      "element": "木",
+      "note": "바느질 치"
+    },
+    {
+      "radicalNum": 205,
+      "radical": "黽",
+      "hangul": "맹",
+      "element": "水",
+      "note": "맹꽁이 맹"
+    },
+    {
+      "radicalNum": 206,
+      "radical": "鼎",
+      "hangul": "정",
+      "element": "火",
+      "note": "솥 정, 학파별 火/金"
+    },
+    {
+      "radicalNum": 207,
+      "radical": "鼓",
+      "hangul": "고",
+      "element": "金",
+      "note": "북 고, 학파별 金/木"
+    },
+    {
+      "radicalNum": 208,
+      "radical": "鼠",
+      "hangul": "서",
+      "element": "水",
+      "note": "쥐 서=子水"
+    },
+    {
+      "radicalNum": 209,
+      "radical": "鼻",
+      "hangul": "비",
+      "element": "金",
+      "note": "코 비=肺金, 학파별 金/水"
+    },
+    {
+      "radicalNum": 210,
+      "radical": "齊",
+      "hangul": "제",
+      "element": "土",
+      "note": "가지런할 제, 학파별 土/火"
+    },
+    {
+      "radicalNum": 211,
+      "radical": "齒",
+      "hangul": "치",
+      "element": "金",
+      "note": "이 치=齒金"
+    },
+    {
+      "radicalNum": 212,
+      "radical": "龍",
+      "hangul": "룡",
+      "element": "土",
+      "note": "용 룡(龙)=辰土, 학파별 土/木"
+    },
+    {
+      "radicalNum": 213,
+      "radical": "龜",
+      "hangul": "귀",
+      "element": "水",
+      "note": "거북 귀"
+    },
+    {
+      "radicalNum": 214,
+      "radical": "龠",
+      "hangul": "약",
+      "element": "火",
+      "note": "피리 약, 학파별 火/木"
+    }
+  ],
+  "gyeokFormula": {
+    "overview": "사격(四格)=元亨利貞(원형이정). 한자 획수는 강희자전(康熙字典) 원획(原劃)을 사용하며, 부수 변형(氵=水4획, 艹=艸6획, 阝=阜8획/邑7획, 扌=手4획, 月=肉6획 등)은 본래 글자의 획수로 환산한다. 삼원오행이 아니라 획수의 끝수가 아닌 합계 자체를 81수리표에 대입한다.",
+    "gyeokMeaning": {
+      "元格(원격)": "초년운(0~20대)·건강·성장·가정의 기초",
+      "亨格(형격)": "청·장년운·성공·사회활동의 중심(主運)",
+      "利格(이격)": "중년운·결혼·대인관계·사회운(外運)",
+      "貞格(정격)": "말년운·총운(總運), 일생을 총괄"
+    },
+    "case_1surname_2given": {
+      "label": "1자 성(S) + 2자 이름(N1=이름첫자, N2=이름끝자)",
+      "元格": "N1 + N2  (이름 두 글자 획수의 합)",
+      "亨格": "S + N1   (성 + 이름 첫 글자 획수의 합)",
+      "利格": "S + N2   (성 + 이름 끝 글자 획수의 합)",
+      "貞格": "S + N1 + N2  (성명 전체 획수의 총합)"
+    },
+    "case_1surname_1given": {
+      "label": "1자 성(S) + 1자 이름(N1). 빈 자리에는 가성수(假成數)=1(太極數/虛數)을 더한다.",
+      "元格": "N1 + 1   (이름 글자 + 가성수 1)",
+      "亨格": "S + N1   (성 + 이름)",
+      "利格": "S + 1    (성 + 가성수 1)",
+      "貞格": "S + N1   (성명 실획의 총합; 가성수는 총격에 더하지 않음)"
+    },
+    "case_2surname_2given_note": "2자 성(S1,S2)+2자 이름(N1,N2)일 때: 元格=N1+N2, 亨格=S2+N1, 利格=S1+S2+N2(또는 S1+N2, 학파별 상이), 貞格=S1+S2+N1+N2(전체 총합).",
+    "alt_naming_note": "熊崎式 5격(天格·人格·地格·外格·總格)과 대응: 元格≈地格, 亨格≈人格, 利格≈外格, 貞格≈總格. 天格(성+가성수)은 조상운으로 길흉 판단에서 제외하는 것이 통례."
+  },
+  "eumyang": {
+    "rule": "홀수획=陽, 짝수획=陰",
+    "goodBalance": "음양이 섞여야 길; 전부 홀 또는 전부 짝이면 흉",
+    "detail": "각 글자(성·이름)의 원획을 홀(陽=○)·짝(陰=●)으로 표시하여 배열한다. ○○○ 또는 ●●● 처럼 한쪽으로 치우치면 흉(순양·순음). ○●○, ●○● 처럼 음양이 교차·혼합되어야 길하다."
+  }
+}

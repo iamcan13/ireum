@@ -1,0 +1,98 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ── 이음(Ieum) design tokens — warm, editorial, Chesky-grade ───────────── */
+@theme {
+  --color-bg: #fbf8f3;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4eee6;
+  --color-ink: #2b2620;
+  --color-ink-muted: #6c6358;
+  --color-ink-subtle: #9b9286;
+  --color-line: #ece4d9;
+
+  --color-accent: #dc6f4f;
+  --color-accent-hover: #c25a3b;
+  --color-accent-soft: #fae8dd;
+
+  --color-success: #5c9e72;
+  --color-warning: #dda13e;
+  --color-danger: #d2604a;
+
+  /* 오행 (five elements) */
+  --color-wood: #6fa98c;
+  --color-fire: #db6a53;
+  --color-earth: #e3a552;
+  --color-metal: #a7aeb5;
+  --color-water: #5e89b3;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Segoe UI", Roboto,
+    sans-serif;
+  --font-display: "Noto Serif KR", "Nanum Myeongjo", ui-serif, Georgia, serif;
+
+  --radius-card: 24px;
+
+  --shadow-soft: 0 1px 2px rgba(43, 38, 32, 0.04), 0 1px 3px rgba(43, 38, 32, 0.06);
+  --shadow-card: 0 6px 20px rgba(43, 38, 32, 0.07), 0 2px 6px rgba(43, 38, 32, 0.05);
+  --shadow-pop: 0 18px 48px rgba(43, 38, 32, 0.12), 0 6px 14px rgba(43, 38, 32, 0.06);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-hover);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .balance {
+    text-wrap: balance;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* gentle entrance used across the app */
+@keyframes ieum-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ieum-rise {
+  animation: ieum-rise 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
