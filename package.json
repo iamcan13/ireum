@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "es-hangul": "^2.3.8",
     "manseryeok": "^2.0.0",
     "motion": "^12.42.0",

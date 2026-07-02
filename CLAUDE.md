@@ -24,7 +24,7 @@ npx vitest                                      # watch mode
 
 There is **no vitest config file** — vitest uses defaults and picks up `src/**/*.test.ts`. Tests are pure unit tests over the engines (no DOM/browser needed).
 
-**Deploy:** the GitHub repo is connected to Vercel — pushing to `main` auto-deploys to production (live at https://ireum-beryl.vercel.app). Manual: `vercel --prod`. No env vars are required for full functionality.
+**Deploy:** the GitHub repo is connected to Vercel — pushing to `main` auto-deploys to production (live at https://namer.gommahands.kr). Manual: `vercel --prod`. No env vars are required for full functionality.
 
 ## Architecture
 

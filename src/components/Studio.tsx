@@ -16,7 +16,7 @@ import { DetailDrawer } from "@/components/DetailDrawer";
 import { CompareTray } from "@/components/CompareTray";
 import { StatsExplorer } from "@/components/StatsExplorer";
 import { HanjaSearchModal } from "@/components/HanjaSearchModal";
-import { XIcon, HeartIcon } from "@/components/ui/icons";
+import { XIcon, HeartIcon, GithubIcon } from "@/components/ui/icons";
 
 const DEFAULT_PARAMS: NameParams = {
   surname: "",
@@ -189,6 +189,14 @@ export function Studio() {
             {STATS_YEARS[STATS_YEARS.length - 1]}). 사주·수리·오행은 전통 명리/성명학
             기반 참고 정보예요.
           </p>
+          <a
+            href="https://github.com/iamcan13/ireum"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1.5 px-1 text-[11px] text-ink-subtle transition-colors hover:text-ink"
+          >
+            <GithubIcon width={14} height={14} /> GitHub 저장소
+          </a>
         </aside>
 
         {/* 우: 결과 — 독립 스크롤 */}
