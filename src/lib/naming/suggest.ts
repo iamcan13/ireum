@@ -3,7 +3,7 @@ import { computeSaju, type SajuResult } from "../saju";
 import { computeSuri } from "./suri";
 import { computeBaleum } from "./baleum";
 import { commonness } from "../stats/commonness";
-import { standardizePronunciation } from "es-hangul";
+import { nameStandardPronunciation } from "./pronounce";
 import { ELEMENT_KO, ELEMENT_NOUN, type Element } from "../core/elements";
 import { initialConsonant, hasBatchim } from "../hangul";
 import {
@@ -18,7 +18,7 @@ import type {
   SyllablePick,
   Gender,
 } from "./types";
-import type { ShareSeed } from "./share";
+import { paramsFromShare, type ShareSeed } from "./share";
 
 function genderOk(h: NamingHanjaEntry, g: Gender): boolean {
   if (g === "neutral") return true;
@@ -193,7 +193,7 @@ function makeSuggestion(
     : "";
 
   const fullName = params.surname ? params.surname + given : given;
-  const pronunciation = standardizePronunciation(fullName);
+  const pronunciation = nameStandardPronunciation(fullName);
 
   return {
     id: `${given}|${hanjaString}`,
@@ -215,16 +215,9 @@ function makeSuggestion(
 }
 
 // 공유 permalink(ShareSeed)로부터 Suggestion을 그대로 재구성 — 상세보기 복원용.
-// 추천 파이프라인의 makeSuggestion을 재사용해 수리·발음오행·통계·발음을 동일하게 계산한다.
+// 추천 파이프라인의 makeSuggestion을 재사용해 수리·발음오행·통계·발음(+사주)을 동일하게 계산한다.
 export function suggestionFromShare(seed: ShareSeed): Suggestion {
-  const params: NameParams = {
-    surname: seed.s || "",
-    surnameHanja: seed.sh,
-    gender: seed.gd,
-    syllableCount: seed.p.length === 1 ? 1 : 2,
-    rarity: 50,
-    useSaju: false,
-  };
+  const params = paramsFromShare(seed);
   const r = resolve(params);
   const picks: SyllablePick[] = seed.p.map((h) => ({
     syllable: h.eum,
@@ -239,6 +232,11 @@ export function suggestionFromShare(seed: ShareSeed): Suggestion {
     },
   }));
   return makeSuggestion(picks, params, r);
+}
+
+// 공유 permalink의 사주 입력(생년월일·시분)으로 사주 결과를 복원 — 디테일 뷰 표시용.
+export function sajuFromShare(seed: ShareSeed): SajuResult | null {
+  return buildSaju(paramsFromShare(seed));
 }
 
 export function suggestNames(params: NameParams, limit = 48): Suggestion[] {

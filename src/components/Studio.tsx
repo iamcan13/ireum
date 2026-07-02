@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { NameParams, Suggestion } from "@/lib/naming/types";
 import type { SajuResult } from "@/lib/saju";
-import { suggestNames, buildSaju, suggestionFromShare } from "@/lib/naming/suggest";
+import { suggestNames, buildSaju, suggestionFromShare, sajuFromShare } from "@/lib/naming/suggest";
 import { encodeShare, decodeShare } from "@/lib/naming/share";
 import {
   getStorage,
@@ -94,7 +94,7 @@ export function Studio({ shareSlug }: { shareSlug?: string } = {}) {
     if (!seed) return;
     try {
       setSelected(suggestionFromShare(seed));
-      setSelectedSaju(null);
+      setSelectedSaju(sajuFromShare(seed)); // 생년월일·시분으로 사주 복원
     } catch {
       /* 잘못된 링크는 무시 */
     }
@@ -151,7 +151,9 @@ export function Studio({ shareSlug }: { shareSlug?: string } = {}) {
 
   const onShare = useCallback(
     (s: Suggestion) => {
-      const slug = encodeShare(s, params.surname, params.surnameHanja, params.gender);
+      // 공유는 항상 'URL 복사'만 (네이티브 공유시트 미사용).
+      // 생년월일·탄생 시분까지 인코딩된 디테일 뷰 permalink를 클립보드에 복사한다.
+      const slug = encodeShare(s, params);
       const origin =
         typeof window !== "undefined" ? window.location.origin : "https://namer.gommahands.kr";
       const url = `${origin}/name/${slug}`;
@@ -159,24 +161,31 @@ export function Studio({ shareSlug }: { shareSlug?: string } = {}) {
         setToast(msg);
         setTimeout(() => setToast(null), 2200);
       };
-      if (navigator.share) {
-        navigator
-          .share({
-            title: `${s.fullName} · 이음`,
-            text: `${s.fullName} (${s.hanjaString}) — ${s.meaning}`,
-            url,
-          })
-          .catch(() => {});
-      } else if (navigator.clipboard) {
+      const fallbackCopy = () => {
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = url;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          flash("공유 링크를 복사했어요");
+        } catch {
+          flash(url);
+        }
+      };
+      if (navigator.clipboard?.writeText) {
         navigator.clipboard
           .writeText(url)
           .then(() => flash("공유 링크를 복사했어요"))
-          .catch(() => flash(url));
+          .catch(fallbackCopy);
       } else {
-        flash(url);
+        fallbackCopy();
       }
     },
-    [params.surname, params.surnameHanja, params.gender]
+    [params]
   );
 
   const focusBirth = useCallback(() => {

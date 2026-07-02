@@ -1,6 +1,6 @@
 // 특정 이름 공유용 permalink 인코딩/디코딩.
 // 서버(generateMetadata)·클라이언트 양쪽에서 안전하게 동작하도록 base64url + UTF-8 처리.
-import type { Suggestion, Gender } from "./types";
+import type { Suggestion, Gender, NameParams } from "./types";
 import type { Element } from "../core/elements";
 
 export interface SharePick {
@@ -18,6 +18,12 @@ export interface ShareSeed {
   sh?: string; // 성 한자
   gd: Gender; // 성별
   p: SharePick[]; // 이름 음절별 한자
+  // 사주 입력(디테일 뷰 복원용) — 생년월일·탄생 시분 등
+  bd?: string; // 생년월일 YYYY-MM-DD
+  bt?: string; // 탄생 시:분 HH:mm
+  db?: "midnight" | "jasi" | "splitJasi"; // 날짜 경계 옵션
+  ts?: boolean; // 진태양시 보정
+  us?: boolean; // 사주 사용 여부
 }
 
 function b64urlEncode(str: string): string {
@@ -36,16 +42,11 @@ function b64urlDecode(slug: string): string {
   return new TextDecoder().decode(bytes);
 }
 
-export function encodeShare(
-  s: Suggestion,
-  surname: string,
-  surnameHanja: string | undefined,
-  gender: Gender
-): string {
+export function encodeShare(s: Suggestion, params: NameParams): string {
   const seed: ShareSeed = {
-    s: surname || "",
-    sh: surnameHanja,
-    gd: gender,
+    s: params.surname || "",
+    sh: params.surnameHanja,
+    gd: params.gender,
     p: s.picks.map((pk) => ({
       c: pk.hanja.c,
       eum: pk.hanja.eum,
@@ -55,8 +56,29 @@ export function encodeShare(
       oh: pk.hanja.oh,
       gender: pk.hanja.gender,
     })),
+    // 사주 입력을 함께 인코딩 — 디테일 뷰 재진입 시 생년월일·시분까지 복원
+    ...(params.useSaju && params.birthDate ? { us: true, bd: params.birthDate } : {}),
+    ...(params.useSaju && params.birthTime ? { bt: params.birthTime } : {}),
+    ...(params.useSaju && params.dayBoundary ? { db: params.dayBoundary } : {}),
+    ...(params.useSaju && params.trueSolarTime ? { ts: true } : {}),
   };
   return b64urlEncode(JSON.stringify(seed));
+}
+
+// ShareSeed → NameParams 복원(사주 입력 포함).
+export function paramsFromShare(seed: ShareSeed): NameParams {
+  return {
+    surname: seed.s || "",
+    surnameHanja: seed.sh,
+    gender: seed.gd,
+    syllableCount: seed.p.length === 1 ? 1 : 2,
+    rarity: 50,
+    useSaju: !!seed.us && !!seed.bd,
+    birthDate: seed.bd,
+    birthTime: seed.bt,
+    dayBoundary: seed.db,
+    trueSolarTime: seed.ts,
+  };
 }
 
 export function decodeShare(slug: string): ShareSeed | null {
