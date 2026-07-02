@@ -61,4 +61,33 @@ describe("공유 permalink 인코딩/디코딩", () => {
   it("잘못된 slug는 null", () => {
     expect(decodeShare("!!!not-valid!!!")).toBeNull();
   });
+
+  it("압축 포맷: 사주 없는 링크는 충분히 짧다(<90)", () => {
+    const s = suggestNames(base, 1)[0];
+    const slug = encodeShare(s, base);
+    expect(slug.length).toBeLessThan(90);
+  });
+
+  it("훈·뜻은 인코딩하지 않고 조회로 복원한다(획수·오행은 보존)", () => {
+    const s = suggestNames(base, 1)[0];
+    const seed = decodeShare(encodeShare(s, base))!;
+    // 획수·자원오행은 seed에 그대로 복원
+    expect(seed.p.map((x) => x.s)).toEqual(s.picks.map((x) => x.hanja.s));
+    expect(seed.p.map((x) => x.oh)).toEqual(s.picks.map((x) => x.hanja.oh));
+    // 훈·뜻은 풀에서 조회되어 원본과 동일
+    expect(seed.p.map((x) => x.meaning)).toEqual(s.picks.map((x) => x.hanja.meaning));
+  });
+
+  it("구버전(rich {p}) 링크도 계속 디코드된다", () => {
+    const rich = {
+      s: "김", sh: "金", gd: "neutral",
+      p: [{ c: "度", eum: "도", hun: "법도", meaning: "법도", s: 9, oh: "火", gender: "neutral" }],
+    };
+    const b64 = Buffer.from(JSON.stringify(rich), "utf8")
+      .toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    const seed = decodeShare(b64);
+    expect(seed).not.toBeNull();
+    expect(seed!.p[0].c).toBe("度");
+    expect(seed!.p[0].meaning).toBe("법도");
+  });
 });
