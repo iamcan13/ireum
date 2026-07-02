@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-label="이음">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- gentle ligature: a soft thread tying the two ㅇ together (이음 = to tie/join) -->
+    <path d="M53 16 C77 4 103 4 117 16" stroke="#DC6F4F" stroke-width="4"/>
+    <!-- 이 : ㅇ (terracotta) + ㅣ -->
+    <circle cx="44" cy="23" r="12" stroke="#DC6F4F" stroke-width="6"/>
+    <line x1="74" y1="17" x2="74" y2="53" stroke="#2B2620" stroke-width="6"/>
+    <!-- 음 : ㅇ (sage) + ㅡ + ㅁ -->
+    <circle cx="126" cy="23" r="12" stroke="#6FA98C" stroke-width="6"/>
+    <line x1="104" y1="43" x2="148" y2="43" stroke="#2B2620" stroke-width="6"/>
+    <rect x="108" y="49" width="36" height="11" rx="4" stroke="#2B2620" stroke-width="5.5"/>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { HeartIcon } from "@/components/ui/icons";
-import { SealMark } from "@/components/ui/Logo";
+import { IeumWordmark } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 
 export function Header({
@@ -27,9 +27,8 @@ export function Header({
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-center gap-2">
-          <SealMark className="h-7 w-7" />
-          <span className="font-display text-2xl font-bold text-ink">이음</span>
+        <a href="/" className="flex items-center" aria-label="이음 홈">
+          <IeumWordmark className="h-9 w-auto" />
         </a>
         <button
           type="button"

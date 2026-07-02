@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="이음">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ieum mark: two linked rings">
+  <!-- Two linked rings = the ㅇㅇ of 이음, a child joined to their name. -->
+  <!-- sage ring (child) sits under; terracotta ring (name) crosses over at top -->
   <circle cx="41" cy="32" r="12" fill="none" stroke="#6FA98C" stroke-width="6.5"/>
   <circle cx="23" cy="32" r="12" fill="none" stroke="#DC6F4F" stroke-width="6.5"/>
+  <!-- weave: bring sage forward at the lower crossing to interlock the rings -->
   <clipPath id="ieum-weave"><rect x="25" y="34" width="14" height="11"/></clipPath>
   <circle cx="41" cy="32" r="12" fill="none" stroke="#6FA98C" stroke-width="6.5" clip-path="url(#ieum-weave)"/>
 </svg>
