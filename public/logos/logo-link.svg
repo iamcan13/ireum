@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" width="160" height="64" role="img" aria-label="이음 — Ieum">
+  <!-- Mark: two rings joined by a terracotta link -->
+  <g transform="translate(2,3.2) scale(0.9)">
+    <path fill="#2B2620" fill-rule="evenodd"
+          d="M5,32 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 z
+             M12,32 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 z"/>
+    <path fill="#2B2620" fill-rule="evenodd"
+          d="M35,32 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 z
+             M42,32 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 z"/>
+    <rect x="25.5" y="28" width="13" height="8" rx="4" fill="#DC6F4F"/>
+  </g>
+  <!-- Wordmark lettering: editorial serif, warm ink -->
+  <text x="66" y="43" fill="#2B2620"
+        font-family="'AppleMyungjo','Nanum Myeongjo','Noto Serif KR',serif"
+        font-size="34" letter-spacing="1">이음</text>
+</svg>

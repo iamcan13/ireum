@@ -3,6 +3,7 @@ import { computeSaju, type SajuResult } from "../saju";
 import { computeSuri } from "./suri";
 import { computeBaleum } from "./baleum";
 import { commonness } from "../stats/commonness";
+import { standardizePronunciation } from "es-hangul";
 import { ELEMENT_KO, ELEMENT_NOUN, type Element } from "../core/elements";
 import { initialConsonant, hasBatchim } from "../hangul";
 import {
@@ -190,10 +191,15 @@ function makeSuggestion(
         .join("")
     : "";
 
+  const fullName = params.surname ? params.surname + given : given;
+  const pronunciation = standardizePronunciation(fullName);
+
   return {
     id: `${given}|${hanjaString}`,
     given,
-    fullName: params.surname ? params.surname + given : given,
+    fullName,
+    pronunciation,
+    soundsAsWritten: pronunciation === fullName,
     picks,
     hanjaString: surnameHanja ? `${surnameHanja}${hanjaString}` : hanjaString,
     meaning,
@@ -214,6 +220,7 @@ export function suggestNames(params: NameParams, limit = 48): Suggestion[] {
 
   const push = (picks: SyllablePick[]) => {
     const s = makeSuggestion(picks, params, r);
+    if (params.spellingEqualsSound && !s.soundsAsWritten) return; // 발음=철자만
     if (seen.has(s.id)) return;
     seen.add(s.id);
     out.push(s);

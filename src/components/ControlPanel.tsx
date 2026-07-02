@@ -199,6 +199,14 @@ export function ControlPanel({
               hint="예: 서아, 하루처럼 부드러운 끝소리"
             />
           </div>
+          <div className="mt-3">
+            <Switch
+              checked={!!params.spellingEqualsSound}
+              onChange={(v) => onChange({ spellingEqualsSound: v })}
+              label="발음과 철자가 같은 이름만"
+              hint="소리 나는 대로 읽히는 이름 (연음 등 발음 변화 없음)"
+            />
+          </div>
         </div>
 
         {/* 돌림자(항렬) */}

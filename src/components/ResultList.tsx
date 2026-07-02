@@ -56,6 +56,11 @@ function ResultRow({
           <div className="mt-0.5 font-display text-base text-ink-muted">
             {s.hanjaString}
           </div>
+          {!s.soundsAsWritten && (
+            <div className="mt-0.5 text-xs text-ink-subtle">
+              발음 [{s.pronunciation}]
+            </div>
+          )}
         </button>
 
         {/* meta */}

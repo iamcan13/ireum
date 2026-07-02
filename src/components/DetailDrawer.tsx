@@ -164,6 +164,11 @@ export function DetailDrawer({
                 <div className="font-display text-5xl font-bold text-ink">
                   {s.fullName}
                 </div>
+                {!s.soundsAsWritten && (
+                  <div className="mt-1 text-sm text-ink-subtle">
+                    발음 [{s.pronunciation}]
+                  </div>
+                )}
                 <div className="mt-3 flex justify-center gap-1.5">
                   {[...s.hanjaString].map((c, i) => (
                     <span

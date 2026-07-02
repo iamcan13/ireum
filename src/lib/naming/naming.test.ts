@@ -182,3 +182,31 @@ describe("자음 커버리지 & 돌림자", () => {
     }
   });
 });
+
+describe("발음 병기 & 발음=철자 필터", () => {
+  const base: NameParams = {
+    surname: "김",
+    gender: "neutral",
+    syllableCount: 2,
+    rarity: 50,
+    useSaju: false,
+  };
+
+  it("모든 추천에 표준발음이 병기된다", () => {
+    const s = suggestNames(base, 20);
+    expect(s.length).toBeGreaterThan(0);
+    for (const x of s) {
+      expect(typeof x.pronunciation).toBe("string");
+      expect(x.pronunciation.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("발음=철자 필터: 결과가 모두 소리대로 읽힌다", () => {
+    const s = suggestNames({ ...base, spellingEqualsSound: true }, 30);
+    expect(s.length).toBeGreaterThan(0);
+    for (const x of s) {
+      expect(x.soundsAsWritten).toBe(true);
+      expect(x.pronunciation).toBe(x.fullName);
+    }
+  });
+});

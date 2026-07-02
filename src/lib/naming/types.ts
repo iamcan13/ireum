@@ -40,6 +40,7 @@ export interface NameParams {
   fixed?: { pos: number; c: string } | null; // (구) 고정 한자 — 현재 미사용
   // 돌림자(항렬): 특정 음절을 위치 고정. hanja 지정 시 그 한자로 고정, 미지정(자동) 시 변형 허용
   dollimja?: { syllable: string; pos: 0 | 1; hanja?: NamingHanjaEntry } | null;
+  spellingEqualsSound?: boolean; // 발음과 철자가 같은 이름만
   useSaju: boolean;
 }
 
@@ -52,6 +53,8 @@ export interface Suggestion {
   id: string;
   given: string; // 이름(한글)
   fullName: string; // 성+이름
+  pronunciation: string; // 표준발음(한글 병기)
+  soundsAsWritten: boolean; // 발음 == 철자
   picks: SyllablePick[];
   hanjaString: string; // 한자 조합
   meaning: string; // 합성 뜻

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { HeartIcon } from "@/components/ui/icons";
+import { SealMark } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 
 export function Header({
@@ -26,10 +27,9 @@ export function Header({
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-baseline gap-0.5">
-          <span className="font-display text-2xl font-bold text-ink">이</span>
-          <span aria-hidden className="mb-1 inline-block h-[2px] w-3 rounded-full bg-accent" />
-          <span className="font-display text-2xl font-bold text-ink">음</span>
+        <a href="/" className="flex items-center gap-2">
+          <SealMark className="h-7 w-7" />
+          <span className="font-display text-2xl font-bold text-ink">이음</span>
         </a>
         <button
           type="button"

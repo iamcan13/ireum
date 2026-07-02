@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ieum mark: two rings joined by a link">
+  <!-- Two rings = a child and their name, each whole. Terracotta bridge = the tie (잇다). -->
+  <!-- Left ring (ink annulus) -->
+  <path fill="#2B2620" fill-rule="evenodd"
+        d="M5,32 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 z
+           M12,32 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 z"/>
+  <!-- Right ring (ink annulus) -->
+  <path fill="#2B2620" fill-rule="evenodd"
+        d="M35,32 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 z
+           M42,32 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 z"/>
+  <!-- Terracotta bridge / link welding the two rings -->
+  <rect x="25.5" y="28" width="13" height="8" rx="4" fill="#DC6F4F"/>
+</svg>
