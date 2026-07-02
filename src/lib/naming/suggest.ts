@@ -18,6 +18,7 @@ import type {
   SyllablePick,
   Gender,
 } from "./types";
+import type { ShareSeed } from "./share";
 
 function genderOk(h: NamingHanjaEntry, g: Gender): boolean {
   if (g === "neutral") return true;
@@ -211,6 +212,33 @@ function makeSuggestion(
     score,
     reasons: reasons.slice(0, 4),
   };
+}
+
+// 공유 permalink(ShareSeed)로부터 Suggestion을 그대로 재구성 — 상세보기 복원용.
+// 추천 파이프라인의 makeSuggestion을 재사용해 수리·발음오행·통계·발음을 동일하게 계산한다.
+export function suggestionFromShare(seed: ShareSeed): Suggestion {
+  const params: NameParams = {
+    surname: seed.s || "",
+    surnameHanja: seed.sh,
+    gender: seed.gd,
+    syllableCount: seed.p.length === 1 ? 1 : 2,
+    rarity: 50,
+    useSaju: false,
+  };
+  const r = resolve(params);
+  const picks: SyllablePick[] = seed.p.map((h) => ({
+    syllable: h.eum,
+    hanja: {
+      c: h.c,
+      eum: h.eum,
+      hun: h.hun,
+      meaning: h.meaning,
+      s: h.s,
+      oh: h.oh,
+      gender: h.gender,
+    },
+  }));
+  return makeSuggestion(picks, params, r);
 }
 
 export function suggestNames(params: NameParams, limit = 48): Suggestion[] {

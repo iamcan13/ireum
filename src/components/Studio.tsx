@@ -3,7 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { NameParams, Suggestion } from "@/lib/naming/types";
 import type { SajuResult } from "@/lib/saju";
-import { suggestNames, buildSaju } from "@/lib/naming/suggest";
+import { suggestNames, buildSaju, suggestionFromShare } from "@/lib/naming/suggest";
+import { encodeShare, decodeShare } from "@/lib/naming/share";
 import {
   getStorage,
   type SavedName,
@@ -30,8 +31,9 @@ const DEFAULT_PARAMS: NameParams = {
   fixed: null,
 };
 
-export function Studio() {
+export function Studio({ shareSlug }: { shareSlug?: string } = {}) {
   const [params, setParams] = useState<NameParams>(DEFAULT_PARAMS);
+  const [toast, setToast] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>("recommend");
   const [selected, setSelected] = useState<Suggestion | null>(null);
   const [selectedSaju, setSelectedSaju] = useState<SajuResult | null>(null);
@@ -85,6 +87,19 @@ export function Studio() {
     []
   );
 
+  // 공유 permalink(/name/[slug])로 진입 시 해당 이름 상세를 자동으로 연다.
+  useEffect(() => {
+    if (!shareSlug) return;
+    const seed = decodeShare(shareSlug);
+    if (!seed) return;
+    try {
+      setSelected(suggestionFromShare(seed));
+      setSelectedSaju(null);
+    } catch {
+      /* 잘못된 링크는 무시 */
+    }
+  }, [shareSlug]);
+
   const saju = useMemo(() => buildSaju(params), [params]);
 
   const suggestions = useMemo(() => {
@@ -134,14 +149,35 @@ export function Studio() {
     });
   }, []);
 
-  const onShare = useCallback((s: Suggestion) => {
-    const text = `${s.fullName} (${s.hanjaString}) — ${s.meaning} · 이음`;
-    if (navigator.share) {
-      navigator.share({ title: "이음", text }).catch(() => {});
-    } else {
-      navigator.clipboard?.writeText(text).catch(() => {});
-    }
-  }, []);
+  const onShare = useCallback(
+    (s: Suggestion) => {
+      const slug = encodeShare(s, params.surname, params.surnameHanja, params.gender);
+      const origin =
+        typeof window !== "undefined" ? window.location.origin : "https://namer.gommahands.kr";
+      const url = `${origin}/name/${slug}`;
+      const flash = (msg: string) => {
+        setToast(msg);
+        setTimeout(() => setToast(null), 2200);
+      };
+      if (navigator.share) {
+        navigator
+          .share({
+            title: `${s.fullName} · 이음`,
+            text: `${s.fullName} (${s.hanjaString}) — ${s.meaning}`,
+            url,
+          })
+          .catch(() => {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard
+          .writeText(url)
+          .then(() => flash("공유 링크를 복사했어요"))
+          .catch(() => flash(url));
+      } else {
+        flash(url);
+      }
+    },
+    [params.surname, params.surnameHanja, params.gender]
+  );
 
   const focusBirth = useCallback(() => {
     setSelected(null);
@@ -270,6 +306,19 @@ export function Studio() {
           setHanjaSearch({ open: false, syllable: "" });
         }}
       />
+
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            className="fixed bottom-6 left-1/2 z-[60] max-w-[90vw] -translate-x-1/2 truncate rounded-full bg-ink px-5 py-3 text-sm font-medium text-bg shadow-pop"
+          >
+            {toast}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
