@@ -21,6 +21,16 @@ function suriTone(label: string) {
   return label === "吉" ? "good" : label === "凶" ? "bad" : "warn";
 }
 
+// 사주 계산에 사용된 생년월일시를 사람이 읽는 형태로.
+function formatBirth(b: SajuResult["birth"]): string {
+  const date = `${b.year}년 ${b.month}월 ${b.day}일`;
+  const time =
+    b.hour != null
+      ? ` ${String(b.hour).padStart(2, "0")}:${String(b.minute ?? 0).padStart(2, "0")}`
+      : " · 시각 미입력";
+  return `${date}${time} (양력)`;
+}
+
 function Section({
   title,
   children,
@@ -308,6 +318,23 @@ export function DetailDrawer({
               <Section title="사주 사주팔자(四柱)">
                 {saju ? (
                   <>
+                    {saju.birth && (
+                      <div className="mb-3 flex flex-wrap items-center gap-1.5 rounded-xl bg-surface-muted px-3.5 py-2.5">
+                        <span className="text-sm font-semibold text-ink">
+                          {formatBirth(saju.birth)}
+                        </span>
+                        {saju.birth.trueSolarTime && (
+                          <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[11px] text-accent-hover">
+                            진태양시
+                          </span>
+                        )}
+                        {saju.birth.dayBoundary !== "midnight" && (
+                          <span className="rounded-full bg-surface px-2 py-0.5 text-[11px] text-ink-muted">
+                            {saju.birth.dayBoundary === "jasi" ? "야자시 23시" : "야/조자시 분리"}
+                          </span>
+                        )}
+                      </div>
+                    )}
                     <div className="grid grid-cols-4 gap-2">
                       <PillarColumn p={saju.pillars.year} />
                       <PillarColumn p={saju.pillars.month} />

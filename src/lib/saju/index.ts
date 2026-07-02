@@ -52,6 +52,16 @@ export interface SajuInput {
 }
 
 export interface SajuResult {
+  // 계산에 사용된 입력 생년월일시(디테일 뷰에 '이미 입력됨' 표시용)
+  birth: {
+    year: number;
+    month: number;
+    day: number;
+    hour: number | null;
+    minute: number | null;
+    dayBoundary: "midnight" | "jasi" | "splitJasi";
+    trueSolarTime: boolean;
+  };
   pillars: { year: Pillar; month: Pillar; day: Pillar; hour: Pillar | null };
   hasHour: boolean;
   dayMaster: Gan;
@@ -221,6 +231,15 @@ export function computeSaju(input: SajuInput): SajuResult {
   });
 
   return {
+    birth: {
+      year: input.year,
+      month: input.month,
+      day: input.day,
+      hour: hasHour ? (input.hour as number) : null,
+      minute: hasHour ? input.minute ?? 0 : null,
+      dayBoundary: input.dayBoundary ?? "midnight",
+      trueSolarTime: !!input.trueSolarTime,
+    },
     pillars: { year: yearP, month: monthP, day: dayP, hour: hourP },
     hasHour,
     dayMaster,
